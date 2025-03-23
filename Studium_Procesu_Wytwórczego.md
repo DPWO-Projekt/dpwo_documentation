@@ -163,22 +163,6 @@ W wyniku analizy architektonicznej będą tworzone następujące diagramy:
 
 W ramach stworzenia systemu projektanci bazy danych odpowiadają za zaprojektowanie, utworzenie oraz optymalizację struktury bazy danych. W projekcie zdecydowano się na wykorzystanie systemu zarządzania bazami danych MongoDB oraz dokumentów JSON jako formy projektu struktury dokumentów.
 
-**Przykład dokumentu data_schema:**
-```json
-{
-    "_id": {
-        "$oid": "67c75aab6b0968ffa0850188"
-    },
-    "name": "sample schema",
-    "elements": [{
-            "name": "pole1",
-            "type": "string"
-        }, {
-            "name": "pole2",
-            "type": "int"
-        }
-    ]
-}```
 ## Etapy pracy, którą będą wykonywać projektanci:
 
 1. **Zdefiniowanie diagramu bazy danych** – analiza wymagań systemu; przedstawienie struktury bazy danych w graficznej formie; określenie kluczy głównych, obcych, relacji.
