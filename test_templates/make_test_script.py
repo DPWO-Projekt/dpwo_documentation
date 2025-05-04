@@ -68,7 +68,7 @@ def main():
         use_case_subdir = "06_Authentication"
     # File names
     test_case_file = f"{TEST_CASE_DIR}/TS-{use_case_subdir}/TS-{args.use_case}-{args.use_case_number:03}.md"
-    test_log_file = f"{TEST_LOG_DIR}/TL-{use_case_subdir}/TL-{args.use_case}-{args.use_case_number:03}.md"
+    test_log_file = f"{TEST_LOG_DIR}/TL-{use_case_subdir}/TL-{args.use_case_number:02}-{args.use_case}-{args.use_case_number:03}.md"
 
     # Generate and append acceptance test case
     test_name = (
