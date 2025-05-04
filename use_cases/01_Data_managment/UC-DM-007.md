@@ -1,8 +1,8 @@
 [UC-DM-007] Show catalog with editing
 ---
 
-[<span style="color: violet;">pre</span>] user is logged-in as Metadata Manager<br/>
-[<span style="color: violet;">pre</span>] user is currently at landing page
+[pre] user is logged-in as Metadata Manager<br/>
+[pre] user is currently at landing page
 
 1. User clicks “Show catalog“ button.
 2. System fetches data related with dataset definitions.

@@ -1,8 +1,8 @@
 [UC-SM-002] Add data schema
 ---
 
-[<span style="color: violet;">pre</span>] user is logged-in as Metadata Manager <br/>
-[<span style="color: violet;">pre</span>] invoked by [UC-SM-007](UC-SM-007.md) Show data schema list
+[pre] user is logged-in as Metadata Manager <br/>
+[pre] invoked by [UC-SM-007](UC-SM-007.md) Show data schema list
 
 1. User chose “edit button” in data schema list view.
 2. System displays a modal window containing new data schema form.
