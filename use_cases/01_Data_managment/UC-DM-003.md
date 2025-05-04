@@ -2,7 +2,7 @@
 ---
 
 [<span style="color: violet;">pre</span>] User is logged-in as Metadata Manager<br/>
-[<span style="color: violet;">pre</span>] invoked by [UC-DM-007] Show catalog with editing
+[<span style="color: violet;">pre</span>] invoked by [UC-DM-007](UC-DM-007.md) Show catalog with editing
 
 1. User click “Edit“ (pencil) icon on catalog view.
 2. System retrieves the definition of dataset.
