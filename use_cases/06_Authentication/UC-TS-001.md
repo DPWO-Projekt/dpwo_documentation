@@ -10,10 +10,10 @@
 5. User click "Register" button.
 6. System validates form.
 
-[Data incorrect] <br/>
-    7a. System presents registration form with incorrectly filled inputs highlighted. <br/>
+[Data incorrect]<br>
+    7a. System presents registration form with incorrectly filled inputs highlighted.<br>
     `<return to step 4>`
 
-[Data correct] <br/>
-   7. System creates and saves new user details. <br/>
+[Data correct]<br>
+   7. System creates and saves new user details.<br>
    8. System redirects towards landing page.

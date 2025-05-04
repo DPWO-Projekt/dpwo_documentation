@@ -1,7 +1,7 @@
 [UC-DM-003] Edit definition of dataset
 ---
 
-[pre] User is logged-in as Metadata Manager<br/>
+[pre] User is logged-in as Metadata Manager<br>
 [pre] invoked by [UC-DM-007](UC-DM-007.md) Show catalog with editing
 
 1. User click “Edit“ (pencil) icon on catalog view.

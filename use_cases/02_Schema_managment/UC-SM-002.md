@@ -1,7 +1,7 @@
 [UC-SM-002] Add data schema
 ---
 
-[pre] user is logged-in as Metadata Manager <br/>
+[pre] user is logged-in as Metadata Manager<br>
 [pre] invoked by [UC-SM-007](UC-SM-007.md) Show data schema list
 
 1. User chose “edit button” in data schema list view.

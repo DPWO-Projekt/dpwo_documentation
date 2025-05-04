@@ -1,7 +1,7 @@
 [UC-DM-007] Show catalog with editing
 ---
 
-[pre] user is logged-in as Metadata Manager<br/>
+[pre] user is logged-in as Metadata Manager<br>
 [pre] user is currently at landing page
 
 1. User clicks “Show catalog“ button.

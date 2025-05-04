@@ -1,13 +1,13 @@
 [UC-DM-006] Set data schema for dataset
 ---
 
-**Test ID:** `AT-DM-006-p1` </br>
-**Use Case ID:** `UC-DM-006`</br>
-**Description:** Verify that the user can assign a data schema to a dataset in the catalog.</br>
+**Test ID:** `AT-DM-006-p1`<br>
+**Use Case ID:** `UC-DM-006`<br>
+**Description:** Verify that the user can assign a data schema to a dataset in the catalog.<br>
 
-[pre] user is logged-in as Metadata Manager</br>
-[pre] there is at least one catalogue in database</br>
-[pre] there is at least one dataset in present catalogues without set schema</br>
+[pre] user is logged-in as Metadata Manager<br>
+[pre] there is at least one catalogue in database<br>
+[pre] there is at least one dataset in present catalogues without set schema<br>
 
 | **Step** | **Description** | **Expected result** |
 |---|---|---|
@@ -19,7 +19,7 @@
 |   |   | A schema with the corresponding `schemaId` exists in the database. |
 ---
 
-[post] in chosen catalogue, chosen dataset schema exists with set schema</br>
+[post] in chosen catalogue, chosen dataset schema exists with set schema<br>
 [post] the dataset row in the catalogue table now displays an assigned schema and no longer shows the `Set schema` button.
 [post] the dataset row now displays enabled `Edit schema` button.
 

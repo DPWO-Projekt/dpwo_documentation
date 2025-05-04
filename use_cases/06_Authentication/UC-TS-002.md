@@ -8,9 +8,9 @@
 3. User clicks "Log in" button.
 4. System validates user credentials.
 
-[Wrong credentials] <br/>
-5a. System presents login form with 'Unknown credentials' error. <br/>
+[Wrong credentials]<br>
+5a. System presents login form with 'Unknown credentials' error.<br>
 `<return to step 2>`
 
-[Correct credentials] <br/>
+[Correct credentials]<br>
 System redirects user towards landing page

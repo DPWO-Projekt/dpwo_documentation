@@ -1,7 +1,7 @@
 [UC-DM-006] Set data schema for dataset
 ---
 
-[pre] user is logged-in as Metadata Manager<br/>
+[pre] user is logged-in as Metadata Manager<br>
 [pre] invoked by [UC-DM-007](UC-DM-007.md) Show catalog with editing
 
 1. User clicks “Set schema” button
