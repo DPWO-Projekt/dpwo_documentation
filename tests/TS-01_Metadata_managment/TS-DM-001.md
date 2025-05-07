@@ -11,7 +11,7 @@
 [post] Catalog named `test-01` is created by the system.<br> 
 
 
-[TS-01-DM-001] Add non-unigue catalog name
+[TS-02-DM-001] Add non-unigue catalog name
 ---
 
 [pre] User is logged-in as Metadata Manager ([UC-TS-002](../../use_cases/06_Authentication/UC-TS-002.md))<br>
