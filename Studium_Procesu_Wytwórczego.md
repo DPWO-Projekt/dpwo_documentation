@@ -3,37 +3,75 @@
 *February 2025*
 
 ## Spis treści
-- [Wprowadzenie](#wprowadzenie)
-- [Organizacja Pracy](#organizacja-pracy)
-- [Narzędzia](#narzędzia)
-- [Analiza Systemowa](#analiza-systemowa)
-  - [Supplementary Specifications (Specyfikacja Uzupełniająca)](#supplementary-specifications-specyfikacja-uzupełniająca)
-  - [Glossary (Słownik)](#glossary-słownik)
-  - [Requirements Specification (Specyfikacja Wymagań)](#requirements-specification-specyfikacja-wymagań)
-- [Architektura](#architektura)
-  - [Wzorce projektowe](#wzorce-projektowe)
-  - [Przebieg fazy analizy US](#przebieg-fazy-analizy-us)
-  - [Diagramy](#diagramy)
-- [Bazy Danych](#bazy-danych)
+- [DPWO Studium Procesu Wytwórczego](#dpwo-studium-procesu-wytwórczego)
+  - [Spis treści](#spis-treści)
+  - [Wprowadzenie](#wprowadzenie)
+  - [Organizacja Pracy](#organizacja-pracy)
+  - [Narzędzia](#narzędzia)
+  - [Analiza Systemowa](#analiza-systemowa)
+    - [Supplementary Specifications (Specyfikacja Uzupełniająca)](#supplementary-specifications-specyfikacja-uzupełniająca)
+    - [Glossary (Słownik)](#glossary-słownik)
+    - [Requirements Specification (Specyfikacja Wymagań)](#requirements-specification-specyfikacja-wymagań)
+  - [Architektura](#architektura)
+    - [Wzorce projektowe](#wzorce-projektowe)
+    - [Przebieg fazy analizy US](#przebieg-fazy-analizy-us)
+    - [Diagramy](#diagramy)
+  - [Bazy Danych](#bazy-danych)
+  - [Etapy pracy, którą będą wykonywać projektanci:](#etapy-pracy-którą-będą-wykonywać-projektanci)
 - [UI-UX](#ui-ux)
-  - [Etapy tworzenia prototypu UI](#etapy-tworzenia-prototypu-ui)
-  - [Wytyczne projektowania UI](#wytyczne-projektowania-ui)
+    - [Etapy tworzenia prototypu UI](#etapy-tworzenia-prototypu-ui)
+      - [**Analiza wymagań**](#analiza-wymagań)
+      - [**Tworzenie wireframe’ów**](#tworzenie-wireframeów)
+      - [**Projektowanie interaktywnych makiet (high-fidelity prototype)**](#projektowanie-interaktywnych-makiet-high-fidelity-prototype)
+      - [**Weryfikacja i iteracja**](#weryfikacja-i-iteracja)
+    - [Wytyczne projektowania UI](#wytyczne-projektowania-ui)
+      - [**Cel**](#cel)
+      - [**Elementy wytycznych UI**](#elementy-wytycznych-ui)
+      - [**Dokumentacja i wdrożenie**](#dokumentacja-i-wdrożenie)
 - [Frontend](#frontend)
   - [Etapy](#etapy)
+    - [**Implementacja komponentu**](#implementacja-komponentu)
+    - [**Implementacja komponentów testujących**](#implementacja-komponentów-testujących)
+    - [**Wykonanie instrukcji instalacji**](#wykonanie-instrukcji-instalacji)
+    - [**Naprawianie błędów**](#naprawianie-błędów)
+    - [**Zgłaszanie uwag innym zespołom w trakcie pracy nad systemem**](#zgłaszanie-uwag-innym-zespołom-w-trakcie-pracy-nad-systemem)
   - [Wytyczne do implementacji](#wytyczne-do-implementacji)
+    - [**Technologia i narzędzia**](#technologia-i-narzędzia)
+    - [**Struktura kodu i modularność**](#struktura-kodu-i-modularność)
+    - [**Responsywność i dostępność**](#responsywność-i-dostępność)
 - [Backend](#backend)
   - [Etapy tworzenia komponentów](#etapy-tworzenia-komponentów)
+    - [**Implementacja**](#implementacja)
+    - [**Testowanie**](#testowanie)
+    - [**Wdrożenie i utrzymanie**](#wdrożenie-i-utrzymanie)
   - [Wytyczne projektowania komponentów](#wytyczne-projektowania-komponentów)
-  - [Dokumentacja i wdrożenie](#dokumentacja-i-wdrożenie)
+    - [**Styl kodowania i konwencje**](#styl-kodowania-i-konwencje)
+    - [**Bezpieczeństwo**](#bezpieczeństwo)
+    - [**Testowanie i jakość kodu**](#testowanie-i-jakość-kodu)
+  - [Dokumentacja i wdrożenie](#dokumentacja-i-wdrożenie-1)
 - [Testy](#testy)
-  - [Test Script (scenariusz testowy)](#test-script-scenariusz-testowy)
-  - [Test Suite (zestaw testów)](#test-suite-zestaw-testów)
-  - [Test Log (dziennik testów)](#test-log-dziennik-testów)
-  - [Żądania zmian](#żądanía-zmian)
+  - [**Test Script (scenariusz testowy)**](#test-script-scenariusz-testowy)
+    - [**Elementy scenariusza testowego**](#elementy-scenariusza-testowego)
+    - [**Przykładowy scenariusz testowy**](#przykładowy-scenariusz-testowy)
+  - [\[TS-03-DM-007\] Optional title](#ts-03-dm-007-optional-title)
+  - [**Test Suite (zestaw testów)**](#test-suite-zestaw-testów)
+  - [**Test Log (dziennik testów)**](#test-log-dziennik-testów)
+  - [**Żądania zmian**](#żądania-zmian)
 - [Code Review](#code-review)
   - [Cele](#cele)
   - [Kryteria oceny kodu](#kryteria-oceny-kodu)
+    - [**Czytelność i styl kodu**](#czytelność-i-styl-kodu)
+    - [**Struktura i organizacja**](#struktura-i-organizacja)
+    - [**Poprawność i funkcjonalność**](#poprawność-i-funkcjonalność)
+    - [**Optymalizacja i wydajność**](#optymalizacja-i-wydajność)
+    - [**Bezpieczeństwo**](#bezpieczeństwo-1)
+    - [**Testy i pokrycie kodu**](#testy-i-pokrycie-kodu)
+    - [**Zgodność z architekturą i wymaganiami projektu**](#zgodność-z-architekturą-i-wymaganiami-projektu)
   - [Przebieg Code Review](#przebieg-code-review)
+    - [**Przygotowanie**](#przygotowanie)
+    - [**Analiza kodu**](#analiza-kodu)
+    - [**Komentowanie i feedback**](#komentowanie-i-feedback)
+    - [**Dyskusja i iteracja**](#dyskusja-i-iteracja)
 
 ## Wprowadzenie
 
@@ -304,37 +342,21 @@ Produktem pracy jest dokument zawierający sekwencję kroków podjętych w ramac
 - Warunki końcowe, czyli stan systemu po zakończeniu testu.
 
 ### **Przykładowy scenariusz testowy**
+[TS-03-DM-007] Optional title
+---
 
-**Przypadek testowy: Edytowanie schematu danych**  
-**Test Case ID:** TC-SM-004  
-**Use Case ID:** UC-SM-004  
-**Opis:**  
-Weryfikacja, czy użytkownik jest w stanie edytować istniejący schemat danych korzystając z ekranu edycji schematu danych i formularza edycji.
+[pre] optional precondition<br>
 
-**Warunki wstępne:**
-- Użytkownik jest zalogowany do systemu.
-- Schemat danych istnieje w systemie.
-- Użytkownik dysponuje uprawnieniami do edycji schematu.
+**Input**: Performed *actions* and provided *input*<br>
+**Output**: Expected outcome
 
-| Krok | Opis | Oczekiwany efekt |
-|------|------|-----------------|
-| 1 | Przejście do ekranu „Schematy Danych” | System wyświetla obecne w systemie schematy danych. |
-| 2 | Wybór schematu z listy do edycji | System ładuje ekran „Edycja Schematu”, widoczne są aktualne dane schematu i formularz edycji schematu. |
-| 3 | Modyfikacja pól formularza (np. nazwy, typów danych) | Formularz akceptuje wprowadzone wartości. |
-| 4 | Kliknięcie przycisku „Zapisz” | System waliduje wprowadzone wartości i zapisuje zmiany. |
-| 5 | Weryfikacja, czy system potwierdził edycję | Widoczny jest pop-up z informacją „Schemat edytowany pomyślnie”. |
-| 6 | Odświeżenie listy schematów | System wyświetla listę schematów z uwzględnionymi zmianami. |
+**Input**: Include actions from some use case by referencing file [UC-DM-006](../tests/TS-01_Metadata_managment/TS-DM-006.md)<br>
+**Output**: 
+- First expected outcome out of many
+- Second outcome
+- ...
 
-**Warunki końcowe:**
-- Schemat został edytowany i zapisany w systemie.
-- Zmiany utrzymują się po odświeżeniu okna.
-
-**Dane testowe:**
-
-| Field | Old Value | New Value |
-|-------|----------|----------|
-| Schema Name | CustomerData | CustomerInfo |
-| Data Type | VARCHAR(50) | VARCHAR(100) |
+[post] optional postcondition<br>
 
 ---
 
