@@ -10,8 +10,8 @@
 - **E-mail**: test@test.pl
 - **Role**: Dataset manager
 - **Password**: test-01-25
-- **Repeat password**: test-01-25
-**Output**: The system displays landing page.
+- **Repeat password**: test-01-25<br>
+**Output**: The system displays landing page.<br>
 
 [post] New user is created by the system.<br>
 [post] User is able to log-in using set credentials.<br>
@@ -27,7 +27,7 @@
 - **E-mail**: test
 - **Role**: Dataset manager
 - **Password**: test-02-25
-- **Repeat password**: test-02-25
+- **Repeat password**: test-02-25<br>
 **Output**: System displays highlights on e-mail input field. 
 
 [pre] User is not registered.
@@ -43,7 +43,7 @@
 - **E-mail**: test@test.pl
 - **Role**: Dataset manager
 - **Password**: test-03-25
-- **Repeat password**: test
+- **Repeat password**: test<br>
 **Output**: System displays highlights on `Repeat password` input field.
 
 [pre] New user is not registered.
