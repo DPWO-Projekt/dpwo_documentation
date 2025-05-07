@@ -32,7 +32,7 @@
   
 **Output**: System displays highlights on e-mail input field. 
 
-[pre] User is not registered.
+[post] User is not registered.
 
 
 [TS-03-TS-001] Failed user registration with password missmatch
@@ -49,4 +49,4 @@
   
 **Output**: System displays highlights on `Repeat password` input field.
 
-[pre] New user is not registered.
+[post] New user is not registered.
