@@ -6,6 +6,7 @@
 
 **Input**: User preforms steps as described in [UC-DM-001](../../use_cases/01_Data_managment/UC-DM-001.md) with input:<br>
 - **Catalog Name**: test-01<br>
+  
 **Output**: System displays catalog list view with `Catalog added` pop-up. Created catalog `test-01` is visible on the list.
 
 [post] Catalog named `test-01` is created by the system.<br> 
@@ -19,6 +20,7 @@
  
 **Input**: User preforms steps from [UC-DM-001](../../use_cases/01_Data_managment/UC-DM-001.md) with input:<br>
 - **Catalog Name**: test-02<br>
+  
 **Output**: System displays validation highlights on `Add new catalog` modal.
 
 [post] New catalog is not created.
