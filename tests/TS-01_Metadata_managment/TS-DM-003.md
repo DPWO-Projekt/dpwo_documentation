@@ -1,40 +1,50 @@
-[TC-01-DM-003]
----
-Input: User logged in as Metadata Manager. User clicks the “Edit” button on an existing dataset.
-Output: The modal window with dataset definition form is displayed, pre-filled with the current values of the selected dataset.
+## [TS-01-DM-003] Successfully edit dataset
 
-[TC-02-DM-003]
----
-Input: User logged in as Metadata Manager. User clicks the “Edit” button on an existing dataset. User changes values in the fields for mandatory attributes. Mandatory attributes are: theme, URI, dataset title, description, language. All text fields are limited to max 100 characters, URI must be a valid uri. Example valid data is specified below. Then user clicks the “Save” button on the form.
-Output: The “Datasets Catalog” window is displayed, the edited dataset is updated in the list, and a success message is displayed.
+[pre] User is logged-in as Metadata Manager ([UC-TS-002](../../use_cases/06_Authentication/UC-TS-002.md))<br>
 
-[TC-03-DM-003]
----
-Input: User logged in as Metadata Manager. User clicks the “Edit” button on an existing dataset. User leaves a mandatory field empty (e.g. dataset theme) and clicks the “Save” button on the form.
-Output: The “Datasets Catalog” window is not displayed, an error message is shown indicating the mandatory field is missing, and the dataset is not updated in the list.
+**Input**: User navigates to dataset list as described in [UC-DM-007](../../use_cases/01_Data_managment/UC-DM-007.md).<br>
+**Output**: System displays a list of dataset definitions with `Edit`, `Add`, and `Set schema` buttons enabled.
 
-[TC-04-DM-003]
----
-Input: User logged in as Metadata Manager. User clicks the “Edit” button on an existing dataset. User changes values in the fields with invalid data (e.g. URI is not a valid URI like: localhost instead of http://localhost). Example invalid data is specified below. Then user clicks the “Save” button on the form.
-Output: The “Datasets Catalog” window is not displayed, an error message is shown indicating the invalid data, and the dataset is not updated in the list.
+**Input**: User edits a dataset as described in [UC-DM-003](../../use_cases/01_Data_managment/UC-DM-003.md) using example data:
 
-## Test data (valid)
-**theme**: Trees
-**URI**: https://warsaw-trees.com
-**title**: Warsaw Trees
-**description**: Trees in Warsaw.
-**language**: PL
+- **theme**: Trees 2<br>
+- **URI**: https://warsaw-trees2.com<br>
+- **title**: Warsaw Trees 2<br>
+- **description**: Trees in Warsaw 2.<br>
+- **language**: EN
 
-## Test data (invalid)
-**theme**: Trees
-**URI**: warsaw-trees
-**title**: Warsaw Trees
-**description**: Trees in Warsaw.
-**language**: PL
+**Output**: Success message is displayed. User is navigated back to the dataset list defined in [UC-DM-007](../../use_cases/01_Data_managment/UC-DM-007.md). Edited dataset is present in the list.
 
-## Test data (invalid)
-**theme**: p.v?y&z0,5d]JL-,;G)njJ;gByzvhSJRg)eH0r4%bL?j2=WVU(L,V#ZP$VvPrKPQ!TT1T$qgp}%#9};uygv_W+Nm5tz,w9:#;XQ_7
-**URI**: https://warsaw-trees.com
-**title**: Warsaw Trees
-**description**: Trees in Warsaw.
-**language**: PL
+## [TS-02-DM-003] Try to edit dataset using incorrect data
+
+[pre] User is logged-in as Metadata Manager ([UC-TS-002](../../use_cases/06_Authentication/UC-TS-002.md))<br>
+
+**Input**: User navigates to dataset list as described in [UC-DM-007](../../use_cases/01_Data_managment/UC-DM-007.md).<br>
+**Output**: System displays a list of dataset definitions with `Edit`, `Add`, and `Set schema` buttons enabled.
+
+**Input**: User tries to edit a dataset as described in [UC-DM-003](../../use_cases/01_Data_managment/UC-DM-003.md) using incorrect data. Example data:
+
+- **theme**: Trees 2<br>
+- **URI**: warsaw-trees2<br>
+- **title**: Warsaw Trees 2<br>
+- **description**: Trees in Warsaw 2.<br>
+- **language**: EN
+
+**Output**: Error message is displayed. Incorrect data is highlighted. Form stays opened. Dataset is not edited.
+
+## [TS-03-DM-003] Try to edit dataset with empty mandatory property
+
+[pre] User is logged-in as Metadata Manager ([UC-TS-002](../../use_cases/06_Authentication/UC-TS-002.md))<br>
+
+**Input**: User navigates to dataset list as described in [UC-DM-007](../../use_cases/01_Data_managment/UC-DM-007.md).<br>
+**Output**: System displays a list of dataset definitions with `Edit`, `Add`, and `Set schema` buttons enabled.
+
+**Input**: User tries to edit a dataset as described in [UC-DM-003](../../use_cases/01_Data_managment/UC-DM-003.md) with empty mandatory property. Example data:
+
+- **theme**: p.v?y&z0,5d]JL-,;G)njJ;gByzvhSJRg)eH0r4%bL?j2=WVU(L,V#ZP$VvPrKPQ!TT1T$qgp}%#9};uygv_W+Nm5tz,w9:#;XQ_7
+- **URI**: https://warsaw-trees2.com
+- **title**: Warsaw Trees 2<br>
+- **description**: Trees in Warsaw 2.<br>
+- **language**: EN
+
+**Output**: Error message is displayed. Empty mandatory field is highlighted. Form stays opened. Dataset is not edited.
