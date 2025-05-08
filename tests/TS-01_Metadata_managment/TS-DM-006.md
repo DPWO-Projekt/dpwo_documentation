@@ -1,4 +1,4 @@
-[TS-01-DM-006] Positive test case
+[TS-01-DM-006] Adding schema to dataset (positive test case)
 ---
 [pre] user is logged-in as Metadata Manager<br>
 [pre] there is at least one catalogue in database<br>
@@ -23,7 +23,7 @@
 [post] the dataset row now displays enabled `Edit schema` button.
 
 
-[TS-02-DM-006] Negative test case
+[TS-02-DM-006] Adding schema to dataset when no schema is present (negative test case) 
 ---
 [pre] user is logged in as Metadata Manager<br>
 [pre] there is at least one catalogue in database<br>
