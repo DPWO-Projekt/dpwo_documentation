@@ -41,7 +41,7 @@
 
 **Input**: User tries to edit a dataset as described in [UC-DM-003](../../use_cases/01_Data_managment/UC-DM-003.md) with empty mandatory property. Example data:
 
-- **theme**: p.v?y&z0,5d]JL-,;G)njJ;gByzvhSJRg)eH0r4%bL?j2=WVU(L,V#ZP$VvPrKPQ!TT1T$qgp}%#9};uygv_W+Nm5tz,w9:#;XQ_7
+- **theme**:
 - **URI**: https://warsaw-trees2.com
 - **title**: Warsaw Trees 2<br>
 - **description**: Trees in Warsaw 2.<br>
