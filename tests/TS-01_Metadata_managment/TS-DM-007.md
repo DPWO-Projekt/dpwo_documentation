@@ -4,7 +4,8 @@
 
 [pre] User is logged in as Metadata Manager
 
-[pre] There is at least one dataset in the catalogue
+[pre] There is at least one dataset in the catalogue, previously added using [UC-DM-002
+](https://github.com/drvslchk/dpwo_documentation/blob/main/use_cases/01_Metadata_managment/UC-DM-002.md)
 
 **Input**: User navigates to the dataset catalog via the "Show Dataset Catalog" widget on the landing page.
 
