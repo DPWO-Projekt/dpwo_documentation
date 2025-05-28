@@ -15,7 +15,7 @@
 **Output**: The system displays landing page.<br>
 
 [post] New user is created by the system.<br>
-[post] User is able to log-in using set credentials.<br>
+[post] User is able to log-in using set credentials via [[UC-TS-002]](https://github.com/DPWO-Projekt/dpwo_documentation/blob/main/use_cases/06_Authentication/UC-TS-002.md).<br>
 
 
 [TS-02-TS-001] Failed user registration with incorrect e-mail

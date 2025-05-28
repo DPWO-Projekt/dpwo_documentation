@@ -41,7 +41,7 @@
 
 **Input**: User tries to add a dataset as described in [UC-DM-002](../../use_cases/01_Data_managment/UC-DM-002.md) with empty mandatory property. Example data:
 
-- **theme**: p.v?y&z0,5d]JL-,;G)njJ;gByzvhSJRg)eH0r4%bL?j2=WVU(L,V#ZP$VvPrKPQ!TT1T$qgp}%#9};uygv_W+Nm5tz,w9:#;XQ_7
+- **theme**:
 - **URI**: https://warsaw-trees.com
 - **title**: Warsaw Trees<br>
 - **description**: Trees in Warsaw.<br>
