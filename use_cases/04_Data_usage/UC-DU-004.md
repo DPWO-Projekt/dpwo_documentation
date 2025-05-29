@@ -2,7 +2,7 @@
 ---
 
 [pre] User is logged-in as Data User<br>
-[pre] Invoked by UC-DU-014 Show catalog as a data user
+[pre] Invoked by [UC-DU-014](../04_Data_usage/UC-DU-014.md) Show catalog as a data user
 
 1. User selects a dataset from the catalog view.
 2. System displays a list of available dataset distributions (e.g., CSV, JSON, XLS).

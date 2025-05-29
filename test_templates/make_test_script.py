@@ -72,7 +72,7 @@ def main():
 
     # Generate and append acceptance test case
     test_name = (
-        f"TC-{args.test_case_number:02}-{args.use_case}-{args.test_case_number:03}"
+        f"TC-{args.test_case_number:02}-{args.use_case}-{args.use_case_number:03}"
     )
     if args.test_case:
         title = (
