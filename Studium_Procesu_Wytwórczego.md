@@ -283,19 +283,48 @@ UI Guidelines to zestaw zasad i wytycznych określających wygląd i zachowanie 
 
 ## Wytyczne do implementacji
 
-### **Technologia i narzędzia**
-- Wykorzystanie biblioteki React do budowy GUI.
-- Przyspieszenie prac integracyjnych z backendem poprzez wykorzystanie mocków oraz danych generowanych przy pomocy Mockaroo.
-- Wykorzystanie npm do budowy i automatyzacji.
+### Technologia i narzędzia
 
-### **Struktura kodu i modularność**
-- Projektowanie komponentów UI, które są od siebie niezależne i możliwe do wielokrotnego użytku.
-- Organizacja kodu zgodnie z przyjętymi wzorcami projektowymi oraz czystą architekturą.
-- Stosowanie się do zasad **DRY, KISS oraz Clean Code**.
-- Spójne nazewnictwo metod (`camelCase`), plików (`PascalCase`) oraz pakietów (`PascalCase`).
+- Projekt realizowany w oparciu o bibliotekę **React**.
+- Wykorzystywana biblioteka **Bootstrap** do stylowania komponentów i budowy responsywnego UI.
+- Do przyspieszenia integracji z backendem stosowane są mocki oraz dane generowane za pomocą serwisu **Mockaroo**.
+- Zarządzanie zależnościami oraz automatyzacja procesów budowania odbywa się za pomocą **npm**.
 
-### **Responsywność i dostępność**
-- Projektowanie interfejsów responsywnych, dostosowanych do różnych urządzeń i rozdzielczości ekranu.
+### Struktura kodu i modularność
+
+Kod organizowany jest zgodnie z podejściem **feature-based** inspirowanym projektem [Bulletproof React](https://github.com/alan2207/bulletproof-react), z dostosowaniem do potrzeb projektu:
+
+```
+/src
+  /features                # Każda funkcjonalność aplikacji
+    /[feature-name]
+      /api                 # Serwisy komunikacji z backendem
+      /components          # Komponenty widoków (np. listy, formularze, szczegóły)
+      /hooks               # Dedykowane hooki dla danej funkcjonalności
+      /styles              # Pliki stylów (.module.css)
+      /types               # Klasy DTO zgodne z backendem
+  /components              # Komponenty wielokrotnego użytku (np. tabele, formularze)
+  /configuration           # Pliki konfiguracyjne aplikacji
+  /assets                  # Ikony i inne zasoby statyczne
+```
+
+- Komponenty projektowane są w sposób **modularny**, **wielokrotnego użytku** i zgodny z zasadami **Separation of Concerns**.
+- Warstwa typów (`types`) odzwierciedla struktury danych z backendu (np. DTOs).
+
+### Dobre praktyki kodowania
+
+- Przestrzeganie zasad:
+  - **DRY** (Don't Repeat Yourself)
+  - **KISS** (Keep It Simple, Stupid)
+- Konwencje nazewnictwa:
+  - Zmienne i metody: `camelCase`
+  - Foldery, pliki i komponenty: `kebab-case`
+
+### Responsywność i dostępność
+
+- Interfejs użytkownika projektowany zgodnie z zasadami **responsywności**, z użyciem komponentów Bootstrap.
+- Dbanie o **dostępność (a11y)** poprzez stosowanie odpowiednich atrybutów ARIA i semantycznych elementów HTML.
+
 # Backend
 
 ## Etapy tworzenia komponentów
