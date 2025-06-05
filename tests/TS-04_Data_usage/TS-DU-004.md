@@ -32,8 +32,10 @@
 **Input**: User performs steps for [UC-DU-014]("../../../../use_cases/04_Data_usage/UC-DU-014.md)<br>
 **Output**: Dataset catalog window with datasets is displayed.
 
-**Input**: The user disconnects frontend server and does not reload the page.
+**Input**: The user disconnects frontend server and does not reload the page.<br>
 **Output**: System displays catalog window.
 
-**Input**: The user <br>
-**Output**:
+**Input**: The user clicks `download` button. <br>
+**Output**: System displays network error message.
+
+[post] The user is able to refresh the page.
