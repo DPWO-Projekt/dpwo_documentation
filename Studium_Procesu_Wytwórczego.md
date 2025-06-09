@@ -36,9 +36,10 @@
     - [**Naprawianie błędów**](#naprawianie-błędów)
     - [**Zgłaszanie uwag innym zespołom w trakcie pracy nad systemem**](#zgłaszanie-uwag-innym-zespołom-w-trakcie-pracy-nad-systemem)
   - [Wytyczne do implementacji](#wytyczne-do-implementacji)
-    - [**Technologia i narzędzia**](#technologia-i-narzędzia)
-    - [**Struktura kodu i modularność**](#struktura-kodu-i-modularność)
-    - [**Responsywność i dostępność**](#responsywność-i-dostępność)
+    - [Technologia i narzędzia](#technologia-i-narzędzia)
+    - [Struktura kodu i modularność](#struktura-kodu-i-modularność)
+    - [Dobre praktyki kodowania](#dobre-praktyki-kodowania)
+    - [Responsywność i dostępność](#responsywność-i-dostępność)
 - [Backend](#backend)
   - [Etapy tworzenia komponentów](#etapy-tworzenia-komponentów)
     - [**Implementacja**](#implementacja)
@@ -56,6 +57,14 @@
   - [\[TS-03-DM-007\] Optional title](#ts-03-dm-007-optional-title)
   - [**Test Suite (zestaw testów)**](#test-suite-zestaw-testów)
   - [**Test Log (dziennik testów)**](#test-log-dziennik-testów)
+  - [**Test Plan (scenariusz testów)**](#test-plan-scenariusz-testów)
+- [Test Plan 05 - datasets with schemas](#test-plan-05---datasets-with-schemas)
+  - [Test plan steps:](#test-plan-steps)
+    - [1. TC-03-DS-014 Opening Owned Datasets Catalog when user is not logged in](#1-tc-03-ds-014-opening-owned-datasets-catalog-when-user-is-not-logged-in)
+    - [2. TS-01-TS-001 Sucessfull user registration as Data Supplier](#2-ts-01-ts-001-sucessfull-user-registration-as-data-supplier)
+    - [3. TC-01-DS-014 Opening Owned Datasets Catalog when no dataset is available](#3-tc-01-ds-014-opening-owned-datasets-catalog-when-no-dataset-is-available)
+    - [4. TS-01-DM-002 Successfully add dataset](#4-ts-01-dm-002-successfully-add-dataset)
+    - [5. TC-02-DS-014 Opening Owned Datasets Catalog when no dataset is available](#5-tc-02-ds-014-opening-owned-datasets-catalog-when-no-dataset-is-available)
   - [**Żądania zmian**](#żądania-zmian)
 - [Code Review](#code-review)
   - [Cele](#cele)
@@ -405,6 +414,20 @@ Wyniki jednego testu zapisywane są w formie tabeli, której przykład zaprezent
 | 2 | Enter credentials | Pass | Input accepted |
 | 3 | Click login | Fail | "Invalid password" error displayed |
 
+---
+
+## **Test Plan (scenariusz testów)**
+Plan testów ma przedstaiwać logiczną kolejność wykonywania testów akceptacyjnych. 
+Realizowany ma być w formie pliku tekstowego markdown, któego przykład zaprezentowano poniżej:
+
+# Test Plan 05 - datasets with schemas
+## Test plan steps:
+
+### 1. [TC-03-DS-014](/tests/TS-03_Data_acquisition_and_management/TS-DS-014.md#tc-03-ds-014-negative-test--user-not-logged-in) Opening Owned Datasets Catalog when user is not logged in
+### 2. [TS-01-TS-001](/tests/TS-06_Authentication/TS-TS-001.md) Sucessfull user registration as Data Supplier
+### 3. [TC-01-DS-014](/tests/TS-03_Data_acquisition_and_management/TS-DS-014.md#tc-01-ds-014-positive-test--owned-datasets-exist) Opening Owned Datasets Catalog when no dataset is available
+### 4. [TS-01-DM-002](/tests/TS-01_Metadata_managment/TS-DM-002.md#ts-01-dm-002-successfully-add-dataset) Successfully add dataset
+### 5. [TC-02-DS-014](/tests/TS-03_Data_acquisition_and_management/TS-DS-014.md#tc-01-ds-014-positive-test--owned-datasets-exist) Opening Owned Datasets Catalog when no dataset is available
 ---
 
 ## **Żądania zmian**
