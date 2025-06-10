@@ -89,24 +89,17 @@ Dokument stanowi studium procesu wytwórczego, opisujące kluczowe etapy, metody
 ## Organizacja Pracy
 
 Praca będzie prowadzona w 3-tygodniowych iteracjach z wykorzystaniem następujących zasad:
-- Zarządzanie statusem i postępem prac w systemie Jira
-- Każda funkcjonalność jako osobne User Story (US) z podzadaniami dla:
-  - Analizy
-  - Architektury
-  - UI/UX
-  - Frontendu
-  - Backendu
-  - Testów
+- Zarządzanie statusem i postępem prac w systemie GitHub Boards
+- Każda funkcjonalność jako osobne zadanie.
 - Bezpośrednie powiadamianie kolejnych wykonawców przez Discord po zakończeniu etapu
 
 ## Narzędzia
 
-- **Project Management**: Jira, Confluence
+- **Project Management**: GitHub Boards
 - **UI/UX Design**: Figma
 - **Frontend**: React
 - **Backend**: Java, Spring Boot
 - **Baza Danych**: MongoDB, MongoDB Compass
-- **Testowanie**: JUnit, Selenium, Mockaroo
 - **Version Control**:
   - Git, GitHub (centralna organizacja projektu)
   - Dwa dedykowane repozytoria:
@@ -116,7 +109,7 @@ Praca będzie prowadzona w 3-tygodniowych iteracjach z wykorzystaniem następuj�
   - GitHub Actions (integracja z repozytoriami)
   - Amazon EC2 (docelowa infrastruktura deploymentu)
   - Automatyzacja testów i procesu wdrażania
-- **Diagramy**: Enterprise Architect, Lucidchart
+- **Diagramy**: Lucidchart
 
 ## Analiza Systemowa
 
