@@ -128,6 +128,7 @@ W poniższej części dokumentu opisane zostanę kluczowe produkty, które precy
 - Identyfikatory przypadków użycia konstruowane powinny być zgodnie z formułą: UC-\[identyfikator_diagramu_PU\]-\[nr_PU\]
 
 ![Przykładowy scenariusz dla przypadku użycia.](scenariusz.png)
+*Rysunek 1: Przykładowe zagadnienie dla przypadku użycia*
 
 - W ramach śledzenia wymagań, stanu oraz postępów projktu, wykorzystane zostaną konkretne moduły oprogramowanie GitHub, aplikacja Lucidchart oraz program Enterprise Architect:
   - Tablica Kanban (GitHub Board) - Całościowe śledzenie postępu realizacji wymagań. Podział według statusu zadań (Todo, In Progress, Done).
@@ -209,18 +210,18 @@ W ramach stworzenia systemu projektanci bazy danych odpowiadają za zaprojektowa
 - Zrozumienie celów projektu, grupy docelowej oraz kluczowych funkcji.
 
 #### **Tworzenie wireframe’ów**
-- Szkice niskiej jakości (low-fidelity) przedstawiające strukturę strony lub aplikacji.
+- Szkice przedstawiające strukturę strony lub aplikacji.
+- Opracowanie realistycznych widoków z uwzględnieniem kolorystyki, typografii i komponentów UI.
 - Narzędzie: Figma.
 
-#### **Projektowanie interaktywnych makiet (high-fidelity prototype)**
-- Opracowanie realistycznych widoków z uwzględnieniem kolorystyki, typografii i komponentów UI.
-- Dodanie interakcji i animacji do symulacji doświadczenia użytkownika.
-- Testowanie użyteczności poprzez zbieranie feedbacku od użytkowników.
+#### **Dodawanie opisów nawigacji warunkowej**
+- Dodanie opisu symulacji zachowania użytkownika oraz wynikowej nawigacji międzywidokowej.
 
 #### **Weryfikacja i iteracja**
 - Współpraca z deweloperami w celu zapewnienia zgodności z technologią.
 
-![Przykład makiety w Figma](makieta.jpg)
+![Przykład makiety w Figma](makieta-lepsza.png)
+*Rysunek 2: Przykładowa makieta*
 
 ### Wytyczne projektowania UI
 
