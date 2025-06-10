@@ -9,9 +9,9 @@
   - [Organizacja Pracy](#organizacja-pracy)
   - [Narzędzia](#narzędzia)
   - [Analiza Systemowa](#analiza-systemowa)
-    - [Supplementary Specifications (Specyfikacja Uzupełniająca)](#supplementary-specifications-specyfikacja-uzupełniająca)
-    - [Glossary (Słownik)](#glossary-słownik)
-    - [Requirements Specification (Specyfikacja Wymagań)](#requirements-specification-specyfikacja-wymagań)
+    - [Kluczowe artefakty analizy systemowej](#kluczowe-artefakty-analizy-systemowej)
+      - [Glossary (Słownik)](#glossary-słownik)
+      - [Requirements Specification (Specyfikacja Wymagań)](#requirements-specification-specyfikacja-wymagań)
   - [Architektura](#architektura)
     - [Wzorce projektowe](#wzorce-projektowe)
     - [Przebieg fazy analizy US](#przebieg-fazy-analizy-us)
@@ -121,50 +121,42 @@ W poniższej części dokumentu opisane zostanę kluczowe produkty, które precy
 - Analiza dokumentacji
 
 **Zarządzanie wymaganiami**
-- Do przechowywania i zarządzania wymaganiami wykorzystane zostanie oprogramowanie Jira. Będą one opisywane za pośrednictwem przypadków użycia. Każdy przypadek użycia posiada swój numer id, nazwę oraz opis w postaci scenariusza.
+- Do przechowywania i zarządzania wymaganiami wykorzystywane będzie oprogramowanie GitHub Projects.
+- Podstawowym źródłem funkcjonalności systemu są diagramy przypadków użycia.
+- Wymagania będą opisywane za pomocą Zagadnień (Issues), które zostaną przypisane bezpośrednio do odpowiednich przypadków użycia.
+- Każde zagadnienie rozpatrywane w ramach projektu powinno zostać umieszczone w Backlogu, opatrzone stosownym identyfikatorem oraz nazwą odpowiadającego mu przypadku użycia (PU). Dodatkowo, w opisie każdego zagadnienia zamieszczane będą scenariusze przypadków użycia.
+- Identyfikatory przypadków użycia konstruowane powinny być zgodnie z formułą: UC-\[identyfikator_diagramu_PU\]-\[nr_PU\]
 
-![Przykładowy scenariusz dla przypadku użycia.](scenario.jpg)
+![Przykładowy scenariusz dla przypadku użycia.](scenariusz.png)
 
-- W ramach śledzenia wymagań oraz postępów projktu, wykorzystane zostaną rozmaite narzędzia oferowane przez oprogramowanie Jira oraz Confluence:
-  - Tablica Kanban (Jira) - Całościowe śledzenie postępu realizacji wymagań. Podział według statusu zadań (Do zrobienia, W toku, Code Review, Gotowe).
-  - Stories (Jira) - Szczegółowy opis poszczególnych przypadków użycia oraz powiązanych z nimi scenariuszy.
-  - Szablon wywiadów Q&A (Confluence) - Narzędzie wspomagające przeprowadzanie wywiadów z klientem i tworzenia notatek on-line.
-  - Szablon słownika (Confluence) - Narzędzie do tworzenia wersji słownika opisującego niejednoznaczne zagadnienia biznesowe.
+- W ramach śledzenia wymagań, stanu oraz postępów projktu, wykorzystane zostaną konkretne moduły oprogramowanie GitHub, aplikacja Lucidchart oraz program Enterprise Architect:
+  - Tablica Kanban (GitHub Board) - Całościowe śledzenie postępu realizacji wymagań. Podział według statusu zadań (Todo, In Progress, Done).
+  - Repozytorium dokumentacji (GitHub Repository) - Repozytorium, do którego docelowo trafiać będą wszystkie powstające artefakty powiązane z dokumentacją projektu.
+  - Szablon słownika (Lucidchart) - Narzędzie do tworzenia wersji słownika opisującego niejednoznaczne zagadnienia biznesowe.
+  - Kreator diagramów przypadków użycia (Enterprise Architect) - Narzędzie wykorzystywane do tworzenia diagramów przypadków użycia w sytuacjach, gdy nie są one odgórnie zdefiniowane, umożliwiające ich opracowanie we współpracy z klientem.
+
+**Definiowanie pożądanych funkcjonalności przy wykorzystaniu diagramu przypadków użycia**
+- Definiowanie pożądanych funkcjonalności systemu odbywa się przy wykorzystaniu diagramu przypadków użycia. W przypadku braku wcześniej zdefiniowanych wymagań, diagram ten tworzony jest we współpracy z klientem.
 
 **Priorytetyzacja oraz szacowanie pracochłonności wymagań**
-- Ocena ważności wymagań realizowana będzie zgodnie z podejściem MoSCoW (must, should, could, won't).
-- Przypisanie odpowiednich etykiet priorytetów w Jirze.
-- Czasochłonność określana w MD (man-day) przy pomocy Scrum Poker'a.
+- Ocena ważności wymagań realizowana będzie zgodnie z podejściem MoSCoW (must, should, could, won't). Ma ona miejsce podczas definiowania diagramów przypadków użycia.
 
-**Wykorzystywane narzędzia**
-- Jira - przechowywanie i zarządzanie wymaganiami przy pomocy tablicy Kanban oraz Stories.
-- Confluence - tworzenie słownika opisowego oraz zapisu wywiadu Q&A.
-- Lucidchart - tworzenie słownika w postaci diagramu klas.
+### Kluczowe artefakty analizy systemowej
 
-### Supplementary Specifications (Specyfikacja Uzupełniająca)
-
-**Wymagania jakościowe**
-- Wydajność - określenie maksymalnego czasu odpowiedzi systemu, liczby obsługiwanych użytkowników
-- Dostępność - zapewnienie wysokiej dostępności systemu (SLA)
-- Bezpieczeństwo – zabezpieczenia przed atakami, autoryzacja, szyfrowanie danych
-- Zgodność z regulacjami prawnymi - wymagania prawne i branżowe (np. RODO)
-- Zgodność ze standardami (np. DCAT-AP)
-
-Wszystkie wymagania niefunkcjonalne zostaną spisane w dokumencie **Specyfikacja Uzupełniająca**, który będzie jednym z produktów analizy systemowej. Dokument ten będzie podstawą do testowania i walidacji systemu w kontekście spełnienia założeń jakościowych, zgodnie z przedstawionymi w nim metrykami.
+W ramach analizy systemowej powstaną 2 kluczowe artefakty.
 
 ### Glossary (Słownik)
 
-**Definiowanie kluczowych terminów oraz definicji domenowych**
-- Opis podstawowych pojęć oraz skrótów i akronimów używanych w projekcie
-- Opis zrealizowany zostanie za pośrednictwem diagramów klas oraz osobnego dokumentu uwzględniającego definicje konkretnych haseł
-- Przykłady pojęć zawieranych w słowniku: API (Application Programming Interface), SLA (Service Level Agreement), Metadane
+**Definiowanie kluczowych definicji projektowych**
+- Definiowanie istotnych zagadnień projektowych będzie mieć miejsce w formie wizualnej.
+- Wizualizacja zrealizowana zostanie za pośrednictwem diagramu klas (zgodnego z normą UML), uwzględniającego obiekty dziedziny biznesowej oraz relacje między nimi.
 
 ### Requirements Specification (Specyfikacja Wymagań)
 
 Każdy przypadek użycia został opisany poprzez:
-- unikalny identyfikator (np. **UC-DM-002**)
-- priorytet według schematu MoSCoW (M-1 – krytyczne, S-2 – średnie, C-3 – niskie, W-4 – bardzo niskie)
-- opis interakcji użytkownika z systemem
+- Unikalny identyfikator (np. **UC-DM-002**).
+- Priorytet według schematu MoSCoW (M-1 – krytyczne, S-2 – średnie, C-3 – niskie, W-4 – bardzo niskie).
+- Opis interakcji użytkownika z systemem.
 
 Przypadki użycia przedstawione są w formie diagramów oraz scenariuszy. Specyfikacja ta umożliwia przeprowadzenie implementacji zgodnie z określonymi wymaganiami funkcjonalnymi oraz zapewnia podstawę do testowania poprawności działania systemu.
 
