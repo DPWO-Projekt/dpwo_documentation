@@ -21,7 +21,7 @@
 - [UI-UX](#ui-ux)
     - [Etapy tworzenia prototypu UI](#etapy-tworzenia-prototypu-ui)
       - [**Analiza wymagań**](#analiza-wymagań)
-      - [**Tworzenie wireframe’ów**](#tworzenie-wireframeów)
+      - [**Tworzenie wireframe'ów**](#tworzenie-wireframeów)
       - [**Projektowanie interaktywnych makiet (high-fidelity prototype)**](#projektowanie-interaktywnych-makiet-high-fidelity-prototype)
       - [**Weryfikacja i iteracja**](#weryfikacja-i-iteracja)
     - [Wytyczne projektowania UI](#wytyczne-projektowania-ui)
@@ -41,15 +41,19 @@
     - [Dobre praktyki kodowania](#dobre-praktyki-kodowania)
     - [Responsywność i dostępność](#responsywność-i-dostępność)
 - [Backend](#backend)
-  - [Etapy tworzenia komponentów](#etapy-tworzenia-komponentów)
-    - [**Implementacja**](#implementacja)
-    - [**Testowanie**](#testowanie)
-    - [**Wdrożenie i utrzymanie**](#wdrożenie-i-utrzymanie)
-  - [Wytyczne projektowania komponentów](#wytyczne-projektowania-komponentów)
-    - [**Styl kodowania i konwencje**](#styl-kodowania-i-konwencje)
-    - [**Bezpieczeństwo**](#bezpieczeństwo)
-    - [**Testowanie i jakość kodu**](#testowanie-i-jakość-kodu)
-  - [Dokumentacja i wdrożenie](#dokumentacja-i-wdrożenie-1)
+  - [Etapy](#etapy)
+    - [Planowanie](#planowanie)
+    - [Implementacja komponentu](#implementacja-komponentu)
+    - [Testowanie](#testowanie)
+    - [Naprawianie błędów](#naprawianie-błędów)
+  - [Wytyczne do implementacji](#wytyczne-do-implementacji)
+    - [Technologia i narzędzia](#technologia-i-narzędzia)
+    - [Struktura kodu i modularność](#struktura-kodu-i-modularność)
+    - [Dobre praktyki kodowania](#dobre-praktyki-kodowania)
+    - [Bezpieczeństwo i wydajność](#bezpieczeństwo-i-wydajność)
+  - [Testowanie](#testowanie)
+    - [Testowanie](#testowanie)
+    - [Dokumentacja](#dokumentacja)
 - [Testy](#testy)
   - [**Test Script (scenariusz testowy)**](#test-script-scenariusz-testowy)
     - [**Elementy scenariusza testowego**](#elementy-scenariusza-testowego)
@@ -149,7 +153,7 @@ W ramach analizy systemowej powstaną 2 kluczowe artefakty.
 ### Glossary (Słownik)
 
 **Definiowanie kluczowych definicji projektowych**
-- Definiowanie istotnych zagadnień projektowych będzie mieć miejsce w formie wizualnej.
+- Definiowanie istotnych zagadnień projektowych będzie miejsce w formie wizualnej.
 - Wizualizacja zrealizowana zostanie za pośrednictwem diagramu klas (zgodnego z normą UML), uwzględniającego obiekty dziedziny biznesowej oraz relacje między nimi.
 
 ### Requirements Specification (Specyfikacja Wymagań)
@@ -209,7 +213,7 @@ W ramach stworzenia systemu projektanci bazy danych odpowiadają za zaprojektowa
 #### **Analiza wymagań**
 - Zrozumienie celów projektu, grupy docelowej oraz kluczowych funkcji.
 
-#### **Tworzenie wireframe’ów**
+#### **Tworzenie wireframe'ów**
 - Szkice przedstawiające strukturę strony lub aplikacji.
 - Opracowanie realistycznych widoków z uwzględnieniem kolorystyki, typografii i komponentów UI.
 - Narzędzie: Figma.
@@ -333,11 +337,13 @@ Struktura pakietów w funkcjonalnościach:
 ### Dobre praktyki kodowania
 
 - Przestrzeganie zasad:
+  - **SOLID** (Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, Dependency Inversion)
   - **DRY** (Don't Repeat Yourself)
   - **KISS** (Keep It Simple, Stupid)
 - Konwencje nazewnictwa:
-  - Zmienne i metody: `camelCase` (np. getCatalogData(...))
-  - Foldery, pliki i komponenty: `kebab-case` (np. catalog-add.tsx)
+  - Klasy: `PascalCase` (np. `UserService`)
+  - Metody i zmienne: `camelCase` (np. `getUserById()`)
+  - Stałe: `UPPER_SNAKE_CASE` (np. `MAX_RETRY_COUNT`)
 
 ### Responsywność i dostępność
 
@@ -346,37 +352,145 @@ Struktura pakietów w funkcjonalnościach:
 
 # Backend
 
-## Etapy tworzenia komponentów
+## Etapy
 
-### **Implementacja**
-- Tworzenie API i logiki biznesowej.
+### Planowanie
+- Analiza wymagań i specyfikacji API
+- Projektowanie struktury endpointów i modeli danych
+- Przypisanie zadań w iteracji do poszczególnych programistów
 
-### **Testowanie**
-- Tworzenie testów jednostkowych.
+### Implementacja komponentu
+- Implementacja modeli danych i DTOs
+- Implementacja warstwy serwisowej i logiki biznesowej
+- Implementacja kontrolerów REST API
+- Implementacja warstwy dostępu do danych (repositories)
+- Przetestowanie wykonanej pracy przez implementera
+- Wysłanie kodu do repozytorium GitHub oraz utworzenie PR-a ze zmianami
+- Przegląd kodu przez uprawnione osoby
 
-### **Wdrożenie i utrzymanie**
-- Przegląd kodu przez zespół.
-- Współpraca z frontendem w celu zapewnienia poprawnej integracji API.
-- Optymalizacja wydajności i poprawki na podstawie feedbacku.
+### Testowanie
+- Implementacja testów jednostkowych dla serwisów i kontrolerów
+- Implementacja testów integracyjnych
+- Wykonanie testów wydajnościowych
+- Dokumentacja przypadków testowych
 
-## Wytyczne projektowania komponentów
+### Naprawianie błędów
+- Przechodzenie przez przypadki testowe wykonane przez zespół testerów
+- Zgłoszenie napotkanych błędów zespołowi
+- Implementacja poprawek w celu likwidacji błędu
 
-### **Styl kodowania i konwencje**
-- Stosowanie zasad **DRY, KISS oraz Clean Code**.
-- Konsekwentne nazewnictwo metod, klas i zmiennych (np. `getUserById()`, `calculateTotalPrice()`).
+Produktem wykonanych etapów jest działający i poprawny kod backendowy.
 
-### **Bezpieczeństwo**
-- Stosowanie autoryzacji i uwierzytelniania (**OAuth2, JWT**).
-- Walidacja danych wejściowych i ochrona przed atakami (**SQL Injection, XSS**).
+## Wytyczne do implementacji
 
-### **Testowanie i jakość kodu**
-- Pokrycie kodu testami jednostkowymi (**JUnit, Spock**).
+### Technologia i narzędzia
 
-## Dokumentacja i wdrożenie
-- Stworzenie centralnego repozytorium (**GitHub**).
-- Regularne aktualizowanie na podstawie nowych wymagań projektowych.
+- Projekt realizowany w oparciu o **Spring Boot** framework
+- Wykorzystywana baza danych **MongoDB** do przechowywania danych
+- **Maven** jako narzędzie do zarządzania zależnościami i budowania projektu
+- **Docker** i **Docker Compose** do konteneryzacji aplikacji
+- **JUnit** i **Mockito** do testowania
+- **Swagger/OpenAPI** do dokumentacji API
+- **Java 21** jako wersja języka programowania
 
----
+### Struktura kodu i modularność
+
+Wykorzystujemy strukturę opartą na modułach funkcjonalnych (feature-based), gdzie każdy moduł zawiera wszystkie warstwy potrzebne do implementacji danej funkcjonalności. Struktura katalogów powinna wyglądać następująco:
+
+```
+src/main/java/com/example/dpwo_backend/
+├── feature1/                   # Moduł funkcjonalny (np. auth, catalog)
+│   ├── controller/             # Kontrolery REST API
+│   ├── dto/                    # Obiekty transferu danych
+│   │   └── subfeature/         # DTOs dla podfunkcjonalności
+│   ├── model/                  # Encje i mappery
+│   ├── repository/             # Interfejsy dostępu do danych
+│   └── service/                # Logika biznesowa
+├── feature2/
+│   ├── controller/
+│   ├── dto/
+│   ├── model/
+│   ├── repository/
+│   └── service/
+├── config/                     # Konfiguracje aplikacji
+├── security/                   # Konfiguracja bezpieczeństwa
+└── DpwoBackendApplication.java # Główna klasa aplikacji
+```
+
+### Odpowiedzialności pakietów
+
+Każdy moduł funkcjonalny zawiera następujące podpakiety:
+
+#### 🔹 `controller`
+- **Cel**: Obsługa komunikacji z frontendem (endpointy API)
+- **Framework**: Spring Web (`@RestController`, `@RequestMapping`)
+- **Nazewnictwo**: Końcówka `Controller` (np. `FeatureController.java`)
+- **Wejście/Wyjście**: Przyjmuje DTOs typu `Request` i zwraca DTOs typu `Response`
+
+#### 🔹 `dto`
+- **Cel**: Kapsułkowanie danych wchodzących do API (`Request`) i wychodzących (`Response`)
+- **Walidacja**: DTOs wejściowe są walidowane przy użyciu **Jakarta Bean Validation**
+- **Klasy**:
+  - `FeatureRequest`: Dane przychodzące
+  - `FeatureResponse`: Dane wychodzące
+
+#### 🔹 `model`
+- **Cel**: Wewnętrzna reprezentacja domenowa funkcjonalności
+- **Mapper**: Zawiera klasę `FeatureMapper` do konwersji między DTOs a modelami domenowymi
+
+#### 🔹 `service`
+- **Cel**: Zawiera logikę biznesową i orkiestrację między warstwami modelu i repozytorium
+- **Nazewnictwo**: Końcówka `Service` (np. `FeatureService.java`)
+- **Źródło wywołań**: Wywoływany z warstwy Controller
+
+#### 🔹 `repository`
+- **Cel**: Warstwa dostępu do danych, odpowiedzialna za komunikację z **MongoDB**
+- **Framework**: Spring Data (`MongoRepository`)
+- **Nazewnictwo**: Końcówka `Repository` (np. `FeatureRepository.java`)
+
+### Przegląd przepływu danych
+
+![Backend specification diagram](backend/Backend_specification.png)
+
+Taka struktura zapewnia:
+- Lepszą organizację kodu poprzez grupowanie powiązanych komponentów
+- Łatwiejsze zarządzanie zależnościami między modułami
+- Prostsze testowanie poszczególnych funkcjonalności
+- Łatwiejsze utrzymanie i rozbudowę systemu
+
+### Dobre praktyki kodowania
+
+- Przestrzeganie zasad:
+  - **SOLID** (Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, Dependency Inversion)
+  - **DRY** (Don't Repeat Yourself)
+  - **KISS** (Keep It Simple, Stupid)
+- Konwencje nazewnictwa:
+  - Klasy: `PascalCase` (np. `UserService`)
+  - Metody i zmienne: `camelCase` (np. `getUserById()`)
+  - Stałe: `UPPER_SNAKE_CASE` (np. `MAX_RETRY_COUNT`)
+
+### Bezpieczeństwo i wydajność
+
+- Implementacja autoryzacji i uwierzytelniania z wykorzystaniem **Spring Security**
+- Walidacja danych wejściowych przy użyciu **Jakarta Bean Validation**
+- Implementacja rate limitingu
+- Optymalizacja zapytań do bazy danych MongoDB
+- Implementacja cachowania
+- Logowanie i monitorowanie
+
+### Testowanie
+
+- Testy jednostkowe dla serwisów i kontrolerów
+- Testy integracyjne dla endpointów API
+- Testy wydajnościowe
+- Pokrycie kodu testami na poziomie minimum 80%
+
+### Dokumentacja
+
+- Dokumentacja API z wykorzystaniem Swagger/OpenAPI
+- Dokumentacja kodu (JavaDoc)
+- Dokumentacja konfiguracji i wdrożenia
+- Aktualizacja dokumentacji przy każdej zmianie w API
 
 # Testy
 
