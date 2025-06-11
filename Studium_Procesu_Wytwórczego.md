@@ -254,27 +254,23 @@ UI Guidelines to zestaw zasad i wytycznych określających wygląd i zachowanie 
 
 ## Etapy
 
-### **Implementacja komponentu**
+### Planowanie
 - Analiza oraz rozdzielenie fragmentów UI z makiet na komponenty.
+- Przypisanie zadań w sprincie do poszczególnych programistów.
+
+### Implementacja komponentu
 - Implementacja wydzielonych komponentów z użyciem zaślepek.
 - Integracja komponentów z backendem.
+- Przetestowanie wykonanej pracy przez implementera.
+- Wysłanie kodu do repozytorium GitHub oraz utworzenie PR-a ze zmianami.
+- Przegląd kodu przez uprawnione osoby.
 
-### **Implementacja komponentów testujących**
-- Wyznaczenie miejsc wymagających testowania.
-- Implementacja testów jednostkowych.
-- Uruchomienie testów jednostkowych.
-- Wygenerowanie raportu z testów.
+### Naprawianie błędów
+- Przechodzenie przez przypadki testowe wykonane przez zespół testerów.
+- Zgłoszenie napotkanych błędów zespołowi.
+- Implementacja poprawek w celu likwidacji błędu.
 
-### **Wykonanie instrukcji instalacji**
-- Przedstawienie potrzebnych narzędzi do uruchomienia projektu.
-- Opisanie konfiguracji środowiska.
-- Opis uruchomienia aplikacji (lista komend).
-
-### **Naprawianie błędów**
-- Współpraca z testerami poprzez rozwiązywanie zgłaszanych problemów w JIRA.
-- Implementacja poprawek.
-
-### **Zgłaszanie uwag innym zespołom w trakcie pracy nad systemem**
+Produktem wykonanych etapów jest działający i poprawny kod.
 
 ## Wytyczne do implementacji
 
@@ -287,21 +283,44 @@ UI Guidelines to zestaw zasad i wytycznych określających wygląd i zachowanie 
 
 ### Struktura kodu i modularność
 
-Kod organizowany jest zgodnie z podejściem **feature-based** inspirowanym projektem [Bulletproof React](https://github.com/alan2207/bulletproof-react), z dostosowaniem do potrzeb projektu:
+Wykorzystujemy strukturę wzorowaną na [Bulletproof React](https://github.com/alan2207/bulletproof-react/blob/master/docs/project-structure.md), która została zaprojektowana z myślą o skalowalności, czytelności i łatwości utrzymania kodu. Struktura katalogów oparta jest na podejściu modułowym, gdzie każdy element funkcjonalny aplikacji posiada swoją własną przestrzeń.
+
+Przykładowa struktura pakietów w projekcie może prezentować się następująco (pakiety w `features` mogą być dodawane lub pomijane w zależności od potrzeb):
 
 ```
-/src
-  /features                # Każda funkcjonalność aplikacji
-    /[feature-name]
-      /api                 # Serwisy komunikacji z backendem
-      /components          # Komponenty widoków (np. listy, formularze, szczegóły)
-      /hooks               # Dedykowane hooki dla danej funkcjonalności
-      /styles              # Pliki stylów (.module.css)
-      /types               # Klasy DTO zgodne z backendem
-  /components              # Komponenty wielokrotnego użytku (np. tabele, formularze)
-  /configuration           # Pliki konfiguracyjne aplikacji
-  /assets                  # Ikony i inne zasoby statyczne
+src/
+├── App.tsx
+├── index.tsx
+├── index.css
+├── assets/
+├── features/
+│   ├── feature1/
+│   │   ├── api/
+│   │   ├── components/
+│   │   ├── styles/
+│   │   ├── types/
+│   ├── feature2/
+│   │   ├── api/
+│   │   ├── components/
+│   │   ├── styles/
+│   │   ├── types/
 ```
+
+Gdzie:
+
+- **App.tsx** – Główny komponent aplikacji
+- **index.tsx** – Punkt wejścia aplikacji
+- **index.css** – Plik ze stylami
+- **assets/** – Zasoby statyczne (zasoby wykorzystywane w całej aplikacji)
+- **features/** – Funkcjonalności (feature-based modules). Każda funkcjonalność ma swój osobny katalog, który zawiera:
+  - **api/** – Wywołania endpointów API
+  - **components/** – Komponenty specyficzne dla danej funkcjonalności
+  - **types/** – Definicje typów TypeScript
+  - **styles/** – Style CSS
+
+![Struktura kodu z podziałem na główne pliki oraz pakiet funkcjonalności](diagram1.png)
+
+![Struktura pakietów w funkcjonalnościach](diagram2.png)
 
 - Komponenty projektowane są w sposób **modularny**, **wielokrotnego użytku** i zgodny z zasadami **Separation of Concerns**.
 - Warstwa typów (`types`) odzwierciedla struktury danych z backendu (np. DTOs).
@@ -312,8 +331,8 @@ Kod organizowany jest zgodnie z podejściem **feature-based** inspirowanym proje
   - **DRY** (Don't Repeat Yourself)
   - **KISS** (Keep It Simple, Stupid)
 - Konwencje nazewnictwa:
-  - Zmienne i metody: `camelCase`
-  - Foldery, pliki i komponenty: `kebab-case`
+  - Zmienne i metody: `camelCase` (np. getCatalogData(...))
+  - Foldery, pliki i komponenty: `kebab-case` (np. catalog-add.tsx)
 
 ### Responsywność i dostępność
 
