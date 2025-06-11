@@ -318,9 +318,14 @@ Gdzie:
   - **types/** – Definicje typów TypeScript
   - **styles/** – Style CSS
 
-![Struktura kodu z podziałem na główne pliki oraz pakiet funkcjonalności](diagram1.png)
+Struktura kodu z podziałem na główne pliki oraz pakiet funkcjonalności:
 
-![Struktura pakietów w funkcjonalnościach](diagram2.png)
+![diagram1](diagram1.png)
+
+
+Struktura pakietów w funkcjonalnościach:
+
+![struktura](diagram2.png)
 
 - Komponenty projektowane są w sposób **modularny**, **wielokrotnego użytku** i zgodny z zasadami **Separation of Concerns**.
 - Warstwa typów (`types`) odzwierciedla struktury danych z backendu (np. DTOs).
