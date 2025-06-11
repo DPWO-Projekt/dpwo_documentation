@@ -248,7 +248,7 @@ UI Guidelines to zestaw zasad i wytycznych określających wygląd i zachowanie 
 #### **Dokumentacja i wdrożenie**
 - Stworzenie centralnego repozytorium wytycznych (w Figmie).
 - Regularne aktualizowanie na podstawie nowych wymagań projektowych i technologicznych.
-- Współpraca z zespołem deweloperskim przy wdrażaniu wytycznych w systemach design systemu (np. Material UI, Bootstrap, Tailwind).
+- Współpraca z zespołem deweloperskim przy wdrażaniu wytycznych w systemach design systemu (Bootstrap).
 
 # Frontend
 
