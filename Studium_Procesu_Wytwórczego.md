@@ -474,21 +474,6 @@ Poza podstawowymi danymi zgłoszeń Jira, żądanie zmiany powinno zawierać:
 - Czy obsługuje różne przypadki brzegowe?
 - Czy nie ma błędów logicznych lub potencjalnych awarii?
 
-### **Optymalizacja i wydajność**
-- Czy kod działa efektywnie i nie obciąża niepotrzebnie zasobów?
-- Czy można poprawić jego wydajność, np. zmniejszając złożoność obliczeniową?
-- Czy zapytania do bazy danych są zoptymalizowane (np. indeksy, paginacja)?
-
-### **Bezpieczeństwo**
-- Czy kod jest odporny na ataki (np. **SQL Injection, XSS, CSRF**)?
-- Czy dane użytkowników są prawidłowo przechowywane i szyfrowane?
-- Czy unika się przechowywania wrażliwych danych w kodzie źródłowym?
-
-### **Testy i pokrycie kodu**
-- Czy istnieją testy jednostkowe i integracyjne?
-- Czy pokrycie kodu testami jest wystarczające?
-- Czy testy sprawdzają kluczowe przypadki użycia i warunki brzegowe?
-
 ### **Zgodność z architekturą i wymaganiami projektu**
 - Czy kod jest zgodny z założeniami architektonicznymi projektu?
 - Czy używane są właściwe wzorce projektowe?
@@ -512,7 +497,7 @@ Poza podstawowymi danymi zgłoszeń Jira, żądanie zmiany powinno zawierać:
 - Unikanie subiektywnej krytyki – skupienie się na jakości kodu.
 
 ### **Dyskusja i iteracja**
-- Omówienie uwag z autorem kodu.
+- Potencjalne omówienie uwag z autorem kodu.
 - Wprowadzenie niezbędnych poprawek.
 - Finalna akceptacja i zatwierdzenie kodu.
 
