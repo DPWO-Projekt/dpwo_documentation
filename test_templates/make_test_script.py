@@ -64,7 +64,7 @@ def main():
         use_case_subdir = "04_Data_usage"
     elif args.use_case == "AA":
         use_case_subdir = "05_Automation_and_administration"
-    elif args.use_case == "AU":
+    elif args.use_case == "TS":
         use_case_subdir = "06_Authentication"
     # File names
     test_case_file = f"{TEST_CASE_DIR}/TS-{use_case_subdir}/TS-{args.use_case}-{args.use_case_number:03}.md"

@@ -8,7 +8,7 @@
 - **Lastname**: Smith
 - **Username**: test-01
 - **E-mail**: test@test.pl
-- **Role**: Dataset manager
+- **Role**: Metadata manager
 - **Password**: test-01-25
 - **Repeat password**: test-01-25<br>
   
@@ -26,7 +26,7 @@
 - **Lastname**: Smith
 - **Username**: test-02
 - **E-mail**: test
-- **Role**: Dataset manager
+- **Role**: Metadata manager
 - **Password**: test-02-25
 - **Repeat password**: test-02-25<br>
   
