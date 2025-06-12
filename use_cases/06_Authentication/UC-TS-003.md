@@ -1,4 +1,4 @@
-[UC-TS-002] Log-out
+[UC-TS-003] Log-out
 ---
 
 [pre] User is authenticated.
