@@ -9,9 +9,9 @@
   - [Organizacja Pracy](#organizacja-pracy)
   - [Narzędzia](#narzędzia)
   - [Analiza Systemowa](#analiza-systemowa)
-    - [Supplementary Specifications (Specyfikacja Uzupełniająca)](#supplementary-specifications-specyfikacja-uzupełniająca)
-    - [Glossary (Słownik)](#glossary-słownik)
-    - [Requirements Specification (Specyfikacja Wymagań)](#requirements-specification-specyfikacja-wymagań)
+    - [Kluczowe artefakty analizy systemowej](#kluczowe-artefakty-analizy-systemowej)
+      - [Glossary (Słownik)](#glossary-słownik)
+      - [Requirements Specification (Specyfikacja Wymagań)](#requirements-specification-specyfikacja-wymagań)
   - [Architektura](#architektura)
     - [Wzorce projektowe](#wzorce-projektowe)
     - [Przebieg fazy analizy US](#przebieg-fazy-analizy-us)
@@ -21,7 +21,7 @@
 - [UI-UX](#ui-ux)
     - [Etapy tworzenia prototypu UI](#etapy-tworzenia-prototypu-ui)
       - [**Analiza wymagań**](#analiza-wymagań)
-      - [**Tworzenie wireframe’ów**](#tworzenie-wireframeów)
+      - [**Tworzenie wireframe'ów**](#tworzenie-wireframeów)
       - [**Projektowanie interaktywnych makiet (high-fidelity prototype)**](#projektowanie-interaktywnych-makiet-high-fidelity-prototype)
       - [**Weryfikacja i iteracja**](#weryfikacja-i-iteracja)
     - [Wytyczne projektowania UI](#wytyczne-projektowania-ui)
@@ -41,15 +41,19 @@
     - [Dobre praktyki kodowania](#dobre-praktyki-kodowania)
     - [Responsywność i dostępność](#responsywność-i-dostępność)
 - [Backend](#backend)
-  - [Etapy tworzenia komponentów](#etapy-tworzenia-komponentów)
-    - [**Implementacja**](#implementacja)
-    - [**Testowanie**](#testowanie)
-    - [**Wdrożenie i utrzymanie**](#wdrożenie-i-utrzymanie)
-  - [Wytyczne projektowania komponentów](#wytyczne-projektowania-komponentów)
-    - [**Styl kodowania i konwencje**](#styl-kodowania-i-konwencje)
-    - [**Bezpieczeństwo**](#bezpieczeństwo)
-    - [**Testowanie i jakość kodu**](#testowanie-i-jakość-kodu)
-  - [Dokumentacja i wdrożenie](#dokumentacja-i-wdrożenie-1)
+  - [Etapy](#etapy)
+    - [Planowanie](#planowanie)
+    - [Implementacja komponentu](#implementacja-komponentu)
+    - [Testowanie](#testowanie)
+    - [Naprawianie błędów](#naprawianie-błędów)
+  - [Wytyczne do implementacji](#wytyczne-do-implementacji)
+    - [Technologia i narzędzia](#technologia-i-narzędzia)
+    - [Struktura kodu i modularność](#struktura-kodu-i-modularność)
+    - [Dobre praktyki kodowania](#dobre-praktyki-kodowania)
+    - [Bezpieczeństwo i wydajność](#bezpieczeństwo-i-wydajność)
+  - [Testowanie](#testowanie)
+    - [Testowanie](#testowanie)
+    - [Dokumentacja](#dokumentacja)
 - [Testy](#testy)
   - [**Test Script (scenariusz testowy)**](#test-script-scenariusz-testowy)
     - [**Elementy scenariusza testowego**](#elementy-scenariusza-testowego)
@@ -91,34 +95,62 @@ Dokument stanowi studium procesu wytwórczego, opisujące kluczowe etapy, metody
 ## Organizacja Pracy
 
 Praca będzie prowadzona w 3-tygodniowych iteracjach z wykorzystaniem następujących zasad:
-- Zarządzanie statusem i postępem prac w systemie Jira
-- Każda funkcjonalność jako osobne User Story (US) z podzadaniami dla:
-  - Analizy
-  - Architektury
-  - UI/UX
-  - Frontendu
-  - Backendu
-  - Testów
+- Zarządzanie statusem i postępem prac w systemie GitHub Boards
+- Każda funkcjonalność jako osobne zadanie.
 - Bezpośrednie powiadamianie kolejnych wykonawców przez Discord po zakończeniu etapu
 
 ## Narzędzia
 
-- **Project Management**: Jira, Confluence
-- **UI/UX Design**: Figma
-- **Frontend**: React
-- **Backend**: Java, Spring Boot
+### Wybór i akwizycja narzędzi
+
+Specjalista od narzędzi odpowiada za:
+- **Analizę potrzeb projektowych** – identyfikacja wymagań funkcjonalnych i technicznych dla narzędzi
+- **Ocenę dostępnych opcji** – porównanie alternatywnych rozwiązań pod kątem funkcjonalności, kosztów i kompatybilności
+- **Negocjację i zakup licencji** – wybór najkorzystniejszych opcji cenowych i modeli licencjonowania
+- **Dokumentację decyzji** – uzasadnienie wyboru konkretnych narzędzi
+
+### Katalog narzędzi projektu
+
+#### Zarządzanie projektem i dokumentacją
+- **GitHub Repositories** – centralne repozytoria kodu z podziałem na:
+  - Repozytorium Frontend
+  - Repozytorium Backend
+  - Repozytorium dokumentacji
+- **GitHub Projects** – zarządzanie statusem i postępem prac, tablice Kanban
+
+#### Projektowanie i dokumentacja wizualna
+- **Figma** – projektowanie interfejsów użytkownika, tworzenie prototypów i makiet
+- **Lucidchart** – tworzenie diagramów UML, diagramów przypadków użycia, schematów architektury
+
+#### Technologie deweloperskie
+- **Frontend**: React, Bootstrap, npm
+- **Backend**: Java, Spring Boot, Maven
 - **Baza Danych**: MongoDB, MongoDB Compass
-- **Testowanie**: JUnit, Selenium, Mockaroo
-- **Version Control**:
-  - Git, GitHub (centralna organizacja projektu)
-  - Dwa dedykowane repozytoria:
-    - Frontend
-    - Backend
-- **CI/CD**:
-  - GitHub Actions (integracja z repozytoriami)
-  - Amazon EC2 (docelowa infrastruktura deploymentu)
-  - Automatyzacja testów i procesu wdrażania
-- **Diagramy**: Enterprise Architect, Lucidchart
+- **Infrastruktura**: Amazon EC2, Docker
+
+#### Narzędzia komunikacji i współpracy
+- **Discord** – bezpośrednie powiadamianie i komunikacja zespołu
+- **Jira** – zarządzanie żądaniami zmian i śledzenie defektów
+
+### Konfiguracja i administracja
+
+#### Administracja bieżąca
+- **Zarządzanie uprawnieniami** – przydzielanie i modyfikacja dostępów
+- **Monitoring wykorzystania** – śledzenie użycia licencji i zasobów
+- **Aktualizacje i maintenance** – regularne aktualizacje narzędzi i konfiguracji
+- **Backup i bezpieczeństwo** – zabezpieczenie danych i konfiguracji
+
+### Wytyczne stosowania narzędzi
+
+#### Standardy organizacyjne
+- **Konwencje nazewnictwa** – ujednolicone nazwy projektów, repozytoriów i plików
+- **Struktura folderów** – określona hierarchia w repozytoriach i przestrzeniach roboczych
+- **Workflow procesów** – standardowe procedury dla code review, deploymentu i testowania
+
+#### Zasady bezpieczeństwa
+- **Zarządzanie dostępem** – regularne audyty uprawnień użytkowników
+- **Ochrona danych** – szyfrowanie i zabezpieczenie wrażliwych informacji
+
 
 ## Analiza Systemowa
 
@@ -130,50 +162,43 @@ W poniższej części dokumentu opisane zostanę kluczowe produkty, które precy
 - Analiza dokumentacji
 
 **Zarządzanie wymaganiami**
-- Do przechowywania i zarządzania wymaganiami wykorzystane zostanie oprogramowanie Jira. Będą one opisywane za pośrednictwem przypadków użycia. Każdy przypadek użycia posiada swój numer id, nazwę oraz opis w postaci scenariusza.
+- Do przechowywania i zarządzania wymaganiami wykorzystywane będzie oprogramowanie GitHub Projects.
+- Podstawowym źródłem funkcjonalności systemu są diagramy przypadków użycia.
+- Wymagania będą opisywane za pomocą Zagadnień (Issues), które zostaną przypisane bezpośrednio do odpowiednich przypadków użycia.
+- Każde zagadnienie rozpatrywane w ramach projektu powinno zostać umieszczone w Backlogu, opatrzone stosownym identyfikatorem oraz nazwą odpowiadającego mu przypadku użycia (PU). Dodatkowo, w opisie każdego zagadnienia zamieszczane będą scenariusze przypadków użycia.
+- Identyfikatory przypadków użycia konstruowane powinny być zgodnie z formułą: UC-\[identyfikator_diagramu_PU\]-\[nr_PU\]
 
-![Przykładowy scenariusz dla przypadku użycia.](scenario.jpg)
+![Przykładowy scenariusz dla przypadku użycia.](scenariusz.png)
+*Rysunek 1: Przykładowe zagadnienie dla przypadku użycia*
 
-- W ramach śledzenia wymagań oraz postępów projktu, wykorzystane zostaną rozmaite narzędzia oferowane przez oprogramowanie Jira oraz Confluence:
-  - Tablica Kanban (Jira) - Całościowe śledzenie postępu realizacji wymagań. Podział według statusu zadań (Do zrobienia, W toku, Code Review, Gotowe).
-  - Stories (Jira) - Szczegółowy opis poszczególnych przypadków użycia oraz powiązanych z nimi scenariuszy.
-  - Szablon wywiadów Q&A (Confluence) - Narzędzie wspomagające przeprowadzanie wywiadów z klientem i tworzenia notatek on-line.
-  - Szablon słownika (Confluence) - Narzędzie do tworzenia wersji słownika opisującego niejednoznaczne zagadnienia biznesowe.
+- W ramach śledzenia wymagań, stanu oraz postępów projktu, wykorzystane zostaną konkretne moduły oprogramowanie GitHub, aplikacja Lucidchart oraz program Enterprise Architect:
+  - Tablica Kanban (GitHub Board) - Całościowe śledzenie postępu realizacji wymagań. Podział według statusu zadań (Todo, In Progress, Done).
+  - Repozytorium dokumentacji (GitHub Repository) - Repozytorium, do którego docelowo trafiać będą wszystkie powstające artefakty powiązane z dokumentacją projektu.
+  - Szablon słownika (Lucidchart) - Narzędzie do tworzenia wersji słownika opisującego niejednoznaczne zagadnienia biznesowe.
+  - Kreator diagramów przypadków użycia (Enterprise Architect) - Narzędzie wykorzystywane do tworzenia diagramów przypadków użycia w sytuacjach, gdy nie są one odgórnie zdefiniowane, umożliwiające ich opracowanie we współpracy z klientem.
+
+**Definiowanie pożądanych funkcjonalności przy wykorzystaniu diagramu przypadków użycia**
+- Definiowanie pożądanych funkcjonalności systemu odbywa się przy wykorzystaniu diagramu przypadków użycia. W przypadku braku wcześniej zdefiniowanych wymagań, diagram ten tworzony jest we współpracy z klientem.
 
 **Priorytetyzacja oraz szacowanie pracochłonności wymagań**
-- Ocena ważności wymagań realizowana będzie zgodnie z podejściem MoSCoW (must, should, could, won't).
-- Przypisanie odpowiednich etykiet priorytetów w Jirze.
-- Czasochłonność określana w MD (man-day) przy pomocy Scrum Poker'a.
+- Ocena ważności wymagań realizowana będzie zgodnie z podejściem MoSCoW (must, should, could, won't). Ma ona miejsce podczas definiowania diagramów przypadków użycia.
 
-**Wykorzystywane narzędzia**
-- Jira - przechowywanie i zarządzanie wymaganiami przy pomocy tablicy Kanban oraz Stories.
-- Confluence - tworzenie słownika opisowego oraz zapisu wywiadu Q&A.
-- Lucidchart - tworzenie słownika w postaci diagramu klas.
+### Kluczowe artefakty analizy systemowej
 
-### Supplementary Specifications (Specyfikacja Uzupełniająca)
-
-**Wymagania jakościowe**
-- Wydajność - określenie maksymalnego czasu odpowiedzi systemu, liczby obsługiwanych użytkowników
-- Dostępność - zapewnienie wysokiej dostępności systemu (SLA)
-- Bezpieczeństwo – zabezpieczenia przed atakami, autoryzacja, szyfrowanie danych
-- Zgodność z regulacjami prawnymi - wymagania prawne i branżowe (np. RODO)
-- Zgodność ze standardami (np. DCAT-AP)
-
-Wszystkie wymagania niefunkcjonalne zostaną spisane w dokumencie **Specyfikacja Uzupełniająca**, który będzie jednym z produktów analizy systemowej. Dokument ten będzie podstawą do testowania i walidacji systemu w kontekście spełnienia założeń jakościowych, zgodnie z przedstawionymi w nim metrykami.
+W ramach analizy systemowej powstaną 2 kluczowe artefakty.
 
 ### Glossary (Słownik)
 
-**Definiowanie kluczowych terminów oraz definicji domenowych**
-- Opis podstawowych pojęć oraz skrótów i akronimów używanych w projekcie
-- Opis zrealizowany zostanie za pośrednictwem diagramów klas oraz osobnego dokumentu uwzględniającego definicje konkretnych haseł
-- Przykłady pojęć zawieranych w słowniku: API (Application Programming Interface), SLA (Service Level Agreement), Metadane
+**Definiowanie kluczowych definicji projektowych**
+- Definiowanie istotnych zagadnień projektowych będzie miejsce w formie wizualnej.
+- Wizualizacja zrealizowana zostanie za pośrednictwem diagramu klas (zgodnego z normą UML), uwzględniającego obiekty dziedziny biznesowej oraz relacje między nimi.
 
 ### Requirements Specification (Specyfikacja Wymagań)
 
 Każdy przypadek użycia został opisany poprzez:
-- unikalny identyfikator (np. **UC-DM-002**)
-- priorytet według schematu MoSCoW (M-1 – krytyczne, S-2 – średnie, C-3 – niskie, W-4 – bardzo niskie)
-- opis interakcji użytkownika z systemem
+- Unikalny identyfikator (np. **UC-DM-002**).
+- Priorytet według schematu MoSCoW (M-1 – krytyczne, S-2 – średnie, C-3 – niskie, W-4 – bardzo niskie).
+- Opis interakcji użytkownika z systemem.
 
 Przypadki użycia przedstawione są w formie diagramów oraz scenariuszy. Specyfikacja ta umożliwia przeprowadzenie implementacji zgodnie z określonymi wymaganiami funkcjonalnymi oraz zapewnia podstawę do testowania poprawności działania systemu.
 
@@ -181,11 +206,11 @@ Przypadki użycia przedstawione są w formie diagramów oraz scenariuszy. Specyf
 
 ### Wzorce projektowe
 
-Oprogramowanie wytwarzane będzie zgodnie ze wzorcem Model-View-Controller (MVC), co zapewni jego modułowość, przejrzystość oraz łatwość utrzymania i rozwoju.
+Oprogramowanie wytwarzane będzie zgodnie z architekturą komponentową o charakterze trójwarstwowym. Każda warstwa zawiera wyspecjalizowane komponenty odpowiadające za inne aspekty systemu:
 
-- **Modele** – Odpowiadają za logikę biznesową i operacje na danych
-- **Widoki** – Odpowiadają za prezentację danych użytkownikowi
-- **Kontrolery** – Odpowiadają za pośredniczenie między Widokami a Modelami, obsługując interakcje użytkownika
+- **Warstwa 1 – Frontend (prezentacja)** - Zawiera niezależne aplikacje interfejsu użytkownika dostosowane do ról
+- **Warstwa 2 – Backend (logika aplikacyjna)** – Zawiera komponenty przetwarzające dane, zarządzające zasobami i obsługujące logikę biznesową
+- **Warstwa 3 – Warstwa danych** – Zawiera główną bazę danych używaną przez komponenty backendowe
 
 W ramach technologii stosowanych w projekcie:
 - Frontend zostanie zaimplementowany w React, co umożliwi tworzenie dynamicznych i responsywnych interfejsów użytkownika
@@ -197,16 +222,17 @@ W ramach technologii stosowanych w projekcie:
 
 - Analiza architektoniczna przypadków użycia – określenie przynależności przypadków użycia do poszczególnych komponentów systemu oraz ich roli w architekturze
 - Opracowanie planu implementacji – identyfikacja kolejności wdrażania poszczególnych przypadków użycia zgodnie z priorytetami biznesowymi i technicznymi
-- Definicja struktury kodu – określenie hierarchii klas, metod oraz pól w zgodzie z zasadami projektowania obiektowego oraz wzorcem MVC
 - Określenie protokołu komunikacji – specyfikacja punktów końcowych API (endpoints), formatów przesyłanych danych oraz metod komunikacji pomiędzy frontendem a backendem
-- Tworzenie diagramów architektonicznych – wizualizacja struktury systemu za pomocą diagramów UML, w tym diagramów przypadków użycia, diagramów klas oraz diagramów sekwencji
+- Tworzenie diagramów architektonicznych – wizualizacja struktury systemu za pomocą diagramów UML
 
 ### Diagramy
 
 W wyniku analizy architektonicznej będą tworzone następujące diagramy:
-- **Diagram klas** – przedstawia strukturę systemu, pokazując klasy oraz ich wzajemne relacje
-- **Diagram komponentów** – ilustruje fizyczną strukturę systemu, pokazując poszczególne komponenty i ich zależności
-- **Diagram sekwencji** – opisuje interakcje pomiędzy obiektami w systemie w ramach określonego scenariusza
+- **Główny diagram komponentów** – Przedstawia ogólną strukturę systemu zgodną z architekturą trójwarstwową (frontend – backend – baza danych). Pokazuje powiązania pomiędzy komponentami interfejsu użytkownika, komponentami serwisowymi oraz warstwą danych. Umożliwia szybkie zrozumienie przepływu danych i separacji odpowiedzialności.
+- **Szczegółowe diagramy komponentów** - Szczegółowe diagramy komponentów przedstawiają wewnętrzną strukturę wybranych modułów backendu, w tym ich interfejsy, metody oraz wykorzystywane obiekty danych (DTO), wraz z powiązaniami z bazą danych. Umożliwiają one dokładne zrozumienie funkcji i odpowiedzialności poszczególnych komponentów w systemie.
+
+![Przykład szczegółowego diagramu komponentów](api_dataschema_diagram.png)
+*Rysunek 2: Przykład szczegółowego diagramu komponentów*
 
 ## Bazy Danych
 
@@ -225,19 +251,19 @@ W ramach stworzenia systemu projektanci bazy danych odpowiadają za zaprojektowa
 #### **Analiza wymagań**
 - Zrozumienie celów projektu, grupy docelowej oraz kluczowych funkcji.
 
-#### **Tworzenie wireframe’ów**
-- Szkice niskiej jakości (low-fidelity) przedstawiające strukturę strony lub aplikacji.
+#### **Tworzenie wireframe'ów**
+- Szkice przedstawiające strukturę strony lub aplikacji.
+- Opracowanie realistycznych widoków z uwzględnieniem kolorystyki, typografii i komponentów UI.
 - Narzędzie: Figma.
 
-#### **Projektowanie interaktywnych makiet (high-fidelity prototype)**
-- Opracowanie realistycznych widoków z uwzględnieniem kolorystyki, typografii i komponentów UI.
-- Dodanie interakcji i animacji do symulacji doświadczenia użytkownika.
-- Testowanie użyteczności poprzez zbieranie feedbacku od użytkowników.
+#### **Dodawanie opisów nawigacji warunkowej**
+- Dodanie opisu symulacji zachowania użytkownika oraz wynikowej nawigacji międzywidokowej.
 
 #### **Weryfikacja i iteracja**
 - Współpraca z deweloperami w celu zapewnienia zgodności z technologią.
 
-![Przykład makiety w Figma](makieta.jpg)
+![Przykład makiety w Figma](makieta-lepsza.png)
+*Rysunek 3: Przykładowa makieta*
 
 ### Wytyczne projektowania UI
 
@@ -264,33 +290,29 @@ UI Guidelines to zestaw zasad i wytycznych określających wygląd i zachowanie 
 #### **Dokumentacja i wdrożenie**
 - Stworzenie centralnego repozytorium wytycznych (w Figmie).
 - Regularne aktualizowanie na podstawie nowych wymagań projektowych i technologicznych.
-- Współpraca z zespołem deweloperskim przy wdrażaniu wytycznych w systemach design systemu (np. Material UI, Bootstrap, Tailwind).
+- Współpraca z zespołem deweloperskim przy wdrażaniu wytycznych w systemach design systemu (Bootstrap).
 
 # Frontend
 
 ## Etapy
 
-### **Implementacja komponentu**
+### Planowanie
 - Analiza oraz rozdzielenie fragmentów UI z makiet na komponenty.
+- Przypisanie zadań w sprincie do poszczególnych programistów.
+
+### Implementacja komponentu
 - Implementacja wydzielonych komponentów z użyciem zaślepek.
 - Integracja komponentów z backendem.
+- Przetestowanie wykonanej pracy przez implementera.
+- Wysłanie kodu do repozytorium GitHub oraz utworzenie PR-a ze zmianami.
+- Przegląd kodu przez uprawnione osoby.
 
-### **Implementacja komponentów testujących**
-- Wyznaczenie miejsc wymagających testowania.
-- Implementacja testów jednostkowych.
-- Uruchomienie testów jednostkowych.
-- Wygenerowanie raportu z testów.
+### Naprawianie błędów
+- Przechodzenie przez przypadki testowe wykonane przez zespół testerów.
+- Zgłoszenie napotkanych błędów zespołowi.
+- Implementacja poprawek w celu likwidacji błędu.
 
-### **Wykonanie instrukcji instalacji**
-- Przedstawienie potrzebnych narzędzi do uruchomienia projektu.
-- Opisanie konfiguracji środowiska.
-- Opis uruchomienia aplikacji (lista komend).
-
-### **Naprawianie błędów**
-- Współpraca z testerami poprzez rozwiązywanie zgłaszanych problemów w JIRA.
-- Implementacja poprawek.
-
-### **Zgłaszanie uwag innym zespołom w trakcie pracy nad systemem**
+Produktem wykonanych etapów jest działający i poprawny kod.
 
 ## Wytyczne do implementacji
 
@@ -303,21 +325,49 @@ UI Guidelines to zestaw zasad i wytycznych określających wygląd i zachowanie 
 
 ### Struktura kodu i modularność
 
-Kod organizowany jest zgodnie z podejściem **feature-based** inspirowanym projektem [Bulletproof React](https://github.com/alan2207/bulletproof-react), z dostosowaniem do potrzeb projektu:
+Wykorzystujemy strukturę wzorowaną na [Bulletproof React](https://github.com/alan2207/bulletproof-react/blob/master/docs/project-structure.md), która została zaprojektowana z myślą o skalowalności, czytelności i łatwości utrzymania kodu. Struktura katalogów oparta jest na podejściu modułowym, gdzie każdy element funkcjonalny aplikacji posiada swoją własną przestrzeń.
+
+Przykładowa struktura pakietów w projekcie może prezentować się następująco (pakiety w `features` mogą być dodawane lub pomijane w zależności od potrzeb):
 
 ```
-/src
-  /features                # Każda funkcjonalność aplikacji
-    /[feature-name]
-      /api                 # Serwisy komunikacji z backendem
-      /components          # Komponenty widoków (np. listy, formularze, szczegóły)
-      /hooks               # Dedykowane hooki dla danej funkcjonalności
-      /styles              # Pliki stylów (.module.css)
-      /types               # Klasy DTO zgodne z backendem
-  /components              # Komponenty wielokrotnego użytku (np. tabele, formularze)
-  /configuration           # Pliki konfiguracyjne aplikacji
-  /assets                  # Ikony i inne zasoby statyczne
+src/
+├── App.tsx
+├── index.tsx
+├── index.css
+├── assets/
+├── features/
+│   ├── feature1/
+│   │   ├── api/
+│   │   ├── components/
+│   │   ├── styles/
+│   │   ├── types/
+│   ├── feature2/
+│   │   ├── api/
+│   │   ├── components/
+│   │   ├── styles/
+│   │   ├── types/
 ```
+
+Gdzie:
+
+- **App.tsx** – Główny komponent aplikacji
+- **index.tsx** – Punkt wejścia aplikacji
+- **index.css** – Plik ze stylami
+- **assets/** – Zasoby statyczne (zasoby wykorzystywane w całej aplikacji)
+- **features/** – Funkcjonalności (feature-based modules). Każda funkcjonalność ma swój osobny katalog, który zawiera:
+  - **api/** – Wywołania endpointów API
+  - **components/** – Komponenty specyficzne dla danej funkcjonalności
+  - **types/** – Definicje typów TypeScript
+  - **styles/** – Style CSS
+
+Struktura kodu z podziałem na główne pliki oraz pakiet funkcjonalności:
+
+![diagram1](diagram1.png)
+
+
+Struktura pakietów w funkcjonalnościach:
+
+![struktura](diagram2.png)
 
 - Komponenty projektowane są w sposób **modularny**, **wielokrotnego użytku** i zgodny z zasadami **Separation of Concerns**.
 - Warstwa typów (`types`) odzwierciedla struktury danych z backendu (np. DTOs).
@@ -325,11 +375,13 @@ Kod organizowany jest zgodnie z podejściem **feature-based** inspirowanym proje
 ### Dobre praktyki kodowania
 
 - Przestrzeganie zasad:
+  - **SOLID** (Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, Dependency Inversion)
   - **DRY** (Don't Repeat Yourself)
   - **KISS** (Keep It Simple, Stupid)
 - Konwencje nazewnictwa:
-  - Zmienne i metody: `camelCase`
-  - Foldery, pliki i komponenty: `kebab-case`
+  - Klasy: `PascalCase` (np. `UserService`)
+  - Metody i zmienne: `camelCase` (np. `getUserById()`)
+  - Stałe: `UPPER_SNAKE_CASE` (np. `MAX_RETRY_COUNT`)
 
 ### Responsywność i dostępność
 
@@ -338,37 +390,145 @@ Kod organizowany jest zgodnie z podejściem **feature-based** inspirowanym proje
 
 # Backend
 
-## Etapy tworzenia komponentów
+## Etapy
 
-### **Implementacja**
-- Tworzenie API i logiki biznesowej.
+### Planowanie
+- Analiza wymagań i specyfikacji API
+- Projektowanie struktury endpointów i modeli danych
+- Przypisanie zadań w iteracji do poszczególnych programistów
 
-### **Testowanie**
-- Tworzenie testów jednostkowych.
+### Implementacja komponentu
+- Implementacja modeli danych i DTOs
+- Implementacja warstwy serwisowej i logiki biznesowej
+- Implementacja kontrolerów REST API
+- Implementacja warstwy dostępu do danych (repositories)
+- Przetestowanie wykonanej pracy przez implementera
+- Wysłanie kodu do repozytorium GitHub oraz utworzenie PR-a ze zmianami
+- Przegląd kodu przez uprawnione osoby
 
-### **Wdrożenie i utrzymanie**
-- Przegląd kodu przez zespół.
-- Współpraca z frontendem w celu zapewnienia poprawnej integracji API.
-- Optymalizacja wydajności i poprawki na podstawie feedbacku.
+### Testowanie
+- Implementacja testów jednostkowych dla serwisów i kontrolerów
+- Implementacja testów integracyjnych
+- Wykonanie testów wydajnościowych
+- Dokumentacja przypadków testowych
 
-## Wytyczne projektowania komponentów
+### Naprawianie błędów
+- Przechodzenie przez przypadki testowe wykonane przez zespół testerów
+- Zgłoszenie napotkanych błędów zespołowi
+- Implementacja poprawek w celu likwidacji błędu
 
-### **Styl kodowania i konwencje**
-- Stosowanie zasad **DRY, KISS oraz Clean Code**.
-- Konsekwentne nazewnictwo metod, klas i zmiennych (np. `getUserById()`, `calculateTotalPrice()`).
+Produktem wykonanych etapów jest działający i poprawny kod backendowy.
 
-### **Bezpieczeństwo**
-- Stosowanie autoryzacji i uwierzytelniania (**OAuth2, JWT**).
-- Walidacja danych wejściowych i ochrona przed atakami (**SQL Injection, XSS**).
+## Wytyczne do implementacji
 
-### **Testowanie i jakość kodu**
-- Pokrycie kodu testami jednostkowymi (**JUnit, Spock**).
+### Technologia i narzędzia
 
-## Dokumentacja i wdrożenie
-- Stworzenie centralnego repozytorium (**GitHub**).
-- Regularne aktualizowanie na podstawie nowych wymagań projektowych.
+- Projekt realizowany w oparciu o **Spring Boot** framework
+- Wykorzystywana baza danych **MongoDB** do przechowywania danych
+- **Maven** jako narzędzie do zarządzania zależnościami i budowania projektu
+- **Docker** i **Docker Compose** do konteneryzacji aplikacji
+- **JUnit** i **Mockito** do testowania
+- **Swagger/OpenAPI** do dokumentacji API
+- **Java 21** jako wersja języka programowania
 
----
+### Struktura kodu i modularność
+
+Wykorzystujemy strukturę opartą na modułach funkcjonalnych (feature-based), gdzie każdy moduł zawiera wszystkie warstwy potrzebne do implementacji danej funkcjonalności. Struktura katalogów powinna wyglądać następująco:
+
+```
+src/main/java/com/example/dpwo_backend/
+├── feature1/                   # Moduł funkcjonalny (np. auth, catalog)
+│   ├── controller/             # Kontrolery REST API
+│   ├── dto/                    # Obiekty transferu danych
+│   │   └── subfeature/         # DTOs dla podfunkcjonalności
+│   ├── model/                  # Encje i mappery
+│   ├── repository/             # Interfejsy dostępu do danych
+│   └── service/                # Logika biznesowa
+├── feature2/
+│   ├── controller/
+│   ├── dto/
+│   ├── model/
+│   ├── repository/
+│   └── service/
+├── config/                     # Konfiguracje aplikacji
+├── security/                   # Konfiguracja bezpieczeństwa
+└── DpwoBackendApplication.java # Główna klasa aplikacji
+```
+
+### Odpowiedzialności pakietów
+
+Każdy moduł funkcjonalny zawiera następujące podpakiety:
+
+#### 🔹 `controller`
+- **Cel**: Obsługa komunikacji z frontendem (endpointy API)
+- **Framework**: Spring Web (`@RestController`, `@RequestMapping`)
+- **Nazewnictwo**: Końcówka `Controller` (np. `FeatureController.java`)
+- **Wejście/Wyjście**: Przyjmuje DTOs typu `Request` i zwraca DTOs typu `Response`
+
+#### 🔹 `dto`
+- **Cel**: Kapsułkowanie danych wchodzących do API (`Request`) i wychodzących (`Response`)
+- **Walidacja**: DTOs wejściowe są walidowane przy użyciu **Jakarta Bean Validation**
+- **Klasy**:
+  - `FeatureRequest`: Dane przychodzące
+  - `FeatureResponse`: Dane wychodzące
+
+#### 🔹 `model`
+- **Cel**: Wewnętrzna reprezentacja domenowa funkcjonalności
+- **Mapper**: Zawiera klasę `FeatureMapper` do konwersji między DTOs a modelami domenowymi
+
+#### 🔹 `service`
+- **Cel**: Zawiera logikę biznesową i orkiestrację między warstwami modelu i repozytorium
+- **Nazewnictwo**: Końcówka `Service` (np. `FeatureService.java`)
+- **Źródło wywołań**: Wywoływany z warstwy Controller
+
+#### 🔹 `repository`
+- **Cel**: Warstwa dostępu do danych, odpowiedzialna za komunikację z **MongoDB**
+- **Framework**: Spring Data (`MongoRepository`)
+- **Nazewnictwo**: Końcówka `Repository` (np. `FeatureRepository.java`)
+
+### Przegląd przepływu danych
+
+![Backend specification diagram](backend/Backend_specification.png)
+
+Taka struktura zapewnia:
+- Lepszą organizację kodu poprzez grupowanie powiązanych komponentów
+- Łatwiejsze zarządzanie zależnościami między modułami
+- Prostsze testowanie poszczególnych funkcjonalności
+- Łatwiejsze utrzymanie i rozbudowę systemu
+
+### Dobre praktyki kodowania
+
+- Przestrzeganie zasad:
+  - **SOLID** (Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, Dependency Inversion)
+  - **DRY** (Don't Repeat Yourself)
+  - **KISS** (Keep It Simple, Stupid)
+- Konwencje nazewnictwa:
+  - Klasy: `PascalCase` (np. `UserService`)
+  - Metody i zmienne: `camelCase` (np. `getUserById()`)
+  - Stałe: `UPPER_SNAKE_CASE` (np. `MAX_RETRY_COUNT`)
+
+### Bezpieczeństwo i wydajność
+
+- Implementacja autoryzacji i uwierzytelniania z wykorzystaniem **Spring Security**
+- Walidacja danych wejściowych przy użyciu **Jakarta Bean Validation**
+- Implementacja rate limitingu
+- Optymalizacja zapytań do bazy danych MongoDB
+- Implementacja cachowania
+- Logowanie i monitorowanie
+
+### Testowanie
+
+- Testy jednostkowe dla serwisów i kontrolerów
+- Testy integracyjne dla endpointów API
+- Testy wydajnościowe
+- Pokrycie kodu testami na poziomie minimum 80%
+
+### Dokumentacja
+
+- Dokumentacja API z wykorzystaniem Swagger/OpenAPI
+- Dokumentacja kodu (JavaDoc)
+- Dokumentacja konfiguracji i wdrożenia
+- Aktualizacja dokumentacji przy każdej zmianie w API
 
 # Testy
 
@@ -468,21 +628,6 @@ Poza podstawowymi danymi zgłoszeń Jira, żądanie zmiany powinno zawierać:
 - Czy obsługuje różne przypadki brzegowe?
 - Czy nie ma błędów logicznych lub potencjalnych awarii?
 
-### **Optymalizacja i wydajność**
-- Czy kod działa efektywnie i nie obciąża niepotrzebnie zasobów?
-- Czy można poprawić jego wydajność, np. zmniejszając złożoność obliczeniową?
-- Czy zapytania do bazy danych są zoptymalizowane (np. indeksy, paginacja)?
-
-### **Bezpieczeństwo**
-- Czy kod jest odporny na ataki (np. **SQL Injection, XSS, CSRF**)?
-- Czy dane użytkowników są prawidłowo przechowywane i szyfrowane?
-- Czy unika się przechowywania wrażliwych danych w kodzie źródłowym?
-
-### **Testy i pokrycie kodu**
-- Czy istnieją testy jednostkowe i integracyjne?
-- Czy pokrycie kodu testami jest wystarczające?
-- Czy testy sprawdzają kluczowe przypadki użycia i warunki brzegowe?
-
 ### **Zgodność z architekturą i wymaganiami projektu**
 - Czy kod jest zgodny z założeniami architektonicznymi projektu?
 - Czy używane są właściwe wzorce projektowe?
@@ -506,7 +651,7 @@ Poza podstawowymi danymi zgłoszeń Jira, żądanie zmiany powinno zawierać:
 - Unikanie subiektywnej krytyki – skupienie się na jakości kodu.
 
 ### **Dyskusja i iteracja**
-- Omówienie uwag z autorem kodu.
+- Potencjalne omówienie uwag z autorem kodu.
 - Wprowadzenie niezbędnych poprawek.
 - Finalna akceptacja i zatwierdzenie kodu.
 
