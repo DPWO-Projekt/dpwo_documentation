@@ -57,6 +57,8 @@
   - [\[TS-03-DM-007\] Optional title](#ts-03-dm-007-optional-title)
   - [**Test Suite (zestaw testów)**](#test-suite-zestaw-testów)
   - [**Test Log (dziennik testów)**](#test-log-dziennik-testów)
+  - [\[TC-01-TS-001\] Test log 12-06-2025 09:19:56](#tc-01-ts-001-test-log-12-06-2025-091956)
+  - [\[TC-02-TS-002\] Test log 12-06-2025 09:30:56](#tc-02-ts-002-test-log-12-06-2025-093056)
   - [**Test Plan (scenariusz testów)**](#test-plan-scenariusz-testów)
 - [Test Plan 05 - datasets with schemas](#test-plan-05---datasets-with-schemas)
   - [Test plan steps:](#test-plan-steps)
@@ -405,14 +407,16 @@ Zestaw będzie zorganizowany hierarchicznie dla łatwego zarządzania testami i 
 ---
 
 ## **Test Log (dziennik testów)**
-Dziennik testów to zbiór nieprzetworzonych wyników testów. Pochodzą one z niezależnego wykonania jednego lub wielu testów zdefiniowanych w zestawie testów.  
-Wyniki jednego testu zapisywane są w formie tabeli, której przykład zaprezentowano poniżej.
+Dziennik testów to zbiór wyników testów. Pochodzą one z niezależnego wykonania jednego lub wielu testów zdefiniowanych w zestawie testów.  
+Wyniki jednego testu zapisywane są w formie pliku markdown, którego przykład zaprezentowano poniżej:
 
-| Krok | Opis kroku | Status | Wynik |
-|------|-----------|--------|-------|
-| 1 | Open login page | Pass | Page loaded successfully |
-| 2 | Enter credentials | Pass | Input accepted |
-| 3 | Click login | Fail | "Invalid password" error displayed |
+[[TC-01-TS-001](tests/TS-06_Authentication/TS-TS-001#ts-01-ts-001-sucessfull-user-registration)] Test log 12-06-2025 09:19:56
+---
+**Step 1**: ✅ Passed. ,,Regstration succesfull!'' message appeared.<br>
+
+[[TC-02-TS-002](tests/TS-06_Authentication/TS-TS-001#ts-02-ts-001-failed-user-registration-with-incorrect-e-mail)] Test log 12-06-2025 09:30:56
+---
+**Step 1**: ✅ Passed. ,,Invalid email format'' message appears on registration form. Registration takes no effect.<br>
 
 ---
 
