@@ -19,8 +19,8 @@ ACCEPTANCE_TEST_TEMPLATE = """[{test_name}] {title}
 
 TEST_LOG_TEMPLATE = """[[{test_name}](../../tests/{test_subdir}/{test_filename}#{test_name}{test_ref})] Test log {date}
 ---
-✅ Passed<br>
-**Step 2**: ❌ Recieved unwanted output
+✅ Passed: output<br>
+❌ Failed: reason
 
 """
 
