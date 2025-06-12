@@ -204,11 +204,11 @@ Przypadki użycia przedstawione są w formie diagramów oraz scenariuszy. Specyf
 
 ### Wzorce projektowe
 
-Oprogramowanie wytwarzane będzie zgodnie ze wzorcem Model-View-Controller (MVC), co zapewni jego modułowość, przejrzystość oraz łatwość utrzymania i rozwoju.
+Oprogramowanie wytwarzane będzie zgodnie z architekturą komponentową o charakterze trójwarstwowym. Każda warstwa zawiera wyspecjalizowane komponenty odpowiadające za inne aspekty systemu:
 
-- **Modele** – Odpowiadają za logikę biznesową i operacje na danych
-- **Widoki** – Odpowiadają za prezentację danych użytkownikowi
-- **Kontrolery** – Odpowiadają za pośredniczenie między Widokami a Modelami, obsługując interakcje użytkownika
+- **Warstwa 1 – Frontend (prezentacja)** - Zawiera niezależne aplikacje interfejsu użytkownika dostosowane do ról
+- **Warstwa 2 – Backend (logika aplikacyjna)** – Zawiera komponenty przetwarzające dane, zarządzające zasobami i obsługujące logikę biznesową
+- **Warstwa 3 – Warstwa danych** – Zawiera główną bazę danych używaną przez komponenty backendowe
 
 W ramach technologii stosowanych w projekcie:
 - Frontend zostanie zaimplementowany w React, co umożliwi tworzenie dynamicznych i responsywnych interfejsów użytkownika
@@ -220,16 +220,17 @@ W ramach technologii stosowanych w projekcie:
 
 - Analiza architektoniczna przypadków użycia – określenie przynależności przypadków użycia do poszczególnych komponentów systemu oraz ich roli w architekturze
 - Opracowanie planu implementacji – identyfikacja kolejności wdrażania poszczególnych przypadków użycia zgodnie z priorytetami biznesowymi i technicznymi
-- Definicja struktury kodu – określenie hierarchii klas, metod oraz pól w zgodzie z zasadami projektowania obiektowego oraz wzorcem MVC
 - Określenie protokołu komunikacji – specyfikacja punktów końcowych API (endpoints), formatów przesyłanych danych oraz metod komunikacji pomiędzy frontendem a backendem
-- Tworzenie diagramów architektonicznych – wizualizacja struktury systemu za pomocą diagramów UML, w tym diagramów przypadków użycia, diagramów klas oraz diagramów sekwencji
+- Tworzenie diagramów architektonicznych – wizualizacja struktury systemu za pomocą diagramów UML
 
 ### Diagramy
 
 W wyniku analizy architektonicznej będą tworzone następujące diagramy:
-- **Diagram klas** – przedstawia strukturę systemu, pokazując klasy oraz ich wzajemne relacje
-- **Diagram komponentów** – ilustruje fizyczną strukturę systemu, pokazując poszczególne komponenty i ich zależności
-- **Diagram sekwencji** – opisuje interakcje pomiędzy obiektami w systemie w ramach określonego scenariusza
+- **Główny diagram komponentów** – Przedstawia ogólną strukturę systemu zgodną z architekturą trójwarstwową (frontend – backend – baza danych). Pokazuje powiązania pomiędzy komponentami interfejsu użytkownika, komponentami serwisowymi oraz warstwą danych. Umożliwia szybkie zrozumienie przepływu danych i separacji odpowiedzialności.
+- **Szczegółowe diagramy komponentów** - Szczegółowe diagramy komponentów przedstawiają wewnętrzną strukturę wybranych modułów backendu, w tym ich interfejsy, metody oraz wykorzystywane obiekty danych (DTO), wraz z powiązaniami z bazą danych. Umożliwiają one dokładne zrozumienie funkcji i odpowiedzialności poszczególnych komponentów w systemie.
+
+![Przykład szczegółowego diagramu komponentów](api_dataschema_diagram.png)
+*Rysunek 2: Przykład szczegółowego diagramu komponentów*
 
 ## Bazy Danych
 
@@ -260,7 +261,7 @@ W ramach stworzenia systemu projektanci bazy danych odpowiadają za zaprojektowa
 - Współpraca z deweloperami w celu zapewnienia zgodności z technologią.
 
 ![Przykład makiety w Figma](makieta-lepsza.png)
-*Rysunek 2: Przykładowa makieta*
+*Rysunek 3: Przykładowa makieta*
 
 ### Wytyczne projektowania UI
 
