@@ -99,21 +99,56 @@ Praca będzie prowadzona w 3-tygodniowych iteracjach z wykorzystaniem następuj�
 
 ## Narzędzia
 
-- **Project Management**: GitHub Boards
-- **UI/UX Design**: Figma
-- **Frontend**: React
-- **Backend**: Java, Spring Boot
+### Wybór i akwizycja narzędzi
+
+Specjalista od narzędzi odpowiada za:
+- **Analizę potrzeb projektowych** – identyfikacja wymagań funkcjonalnych i technicznych dla narzędzi
+- **Ocenę dostępnych opcji** – porównanie alternatywnych rozwiązań pod kątem funkcjonalności, kosztów i kompatybilności
+- **Negocjację i zakup licencji** – wybór najkorzystniejszych opcji cenowych i modeli licencjonowania
+- **Dokumentację decyzji** – uzasadnienie wyboru konkretnych narzędzi
+
+### Katalog narzędzi projektu
+
+#### Zarządzanie projektem i dokumentacją
+- **GitHub Repositories** – centralne repozytoria kodu z podziałem na:
+  - Repozytorium Frontend
+  - Repozytorium Backend
+  - Repozytorium dokumentacji
+- **GitHub Projects** – zarządzanie statusem i postępem prac, tablice Kanban
+
+#### Projektowanie i dokumentacja wizualna
+- **Figma** – projektowanie interfejsów użytkownika, tworzenie prototypów i makiet
+- **Lucidchart** – tworzenie diagramów UML, diagramów przypadków użycia, schematów architektury
+
+#### Technologie deweloperskie
+- **Frontend**: React, Bootstrap, npm
+- **Backend**: Java, Spring Boot, Maven
 - **Baza Danych**: MongoDB, MongoDB Compass
-- **Version Control**:
-  - Git, GitHub (centralna organizacja projektu)
-  - Dwa dedykowane repozytoria:
-    - Frontend
-    - Backend
-- **CI/CD**:
-  - GitHub Actions (integracja z repozytoriami)
-  - Amazon EC2 (docelowa infrastruktura deploymentu)
-  - Automatyzacja testów i procesu wdrażania
-- **Diagramy**: Lucidchart
+- **Infrastruktura**: Amazon EC2, Docker
+
+#### Narzędzia komunikacji i współpracy
+- **Discord** – bezpośrednie powiadamianie i komunikacja zespołu
+- **Jira** – zarządzanie żądaniami zmian i śledzenie defektów
+
+### Konfiguracja i administracja
+
+#### Administracja bieżąca
+- **Zarządzanie uprawnieniami** – przydzielanie i modyfikacja dostępów
+- **Monitoring wykorzystania** – śledzenie użycia licencji i zasobów
+- **Aktualizacje i maintenance** – regularne aktualizacje narzędzi i konfiguracji
+- **Backup i bezpieczeństwo** – zabezpieczenie danych i konfiguracji
+
+### Wytyczne stosowania narzędzi
+
+#### Standardy organizacyjne
+- **Konwencje nazewnictwa** – ujednolicone nazwy projektów, repozytoriów i plików
+- **Struktura folderów** – określona hierarchia w repozytoriach i przestrzeniach roboczych
+- **Workflow procesów** – standardowe procedury dla code review, deploymentu i testowania
+
+#### Zasady bezpieczeństwa
+- **Zarządzanie dostępem** – regularne audyty uprawnień użytkowników
+- **Ochrona danych** – szyfrowanie i zabezpieczenie wrażliwych informacji
+
 
 ## Analiza Systemowa
 
