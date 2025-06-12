@@ -572,11 +572,11 @@ Wyniki jednego testu zapisywane są w formie pliku markdown, którego przykład 
 
 [[TC-01-TS-001](tests/TS-06_Authentication/TS-TS-001#ts-01-ts-001-sucessfull-user-registration)] Test log 12-06-2025 09:19:56
 ---
-**Step 1**: ✅ Passed. ,,Regstration succesfull!'' message appeared.<br>
+✅ Passed. ,,Regstration succesfull!'' message appeared.<br>
 
 [[TC-02-TS-002](tests/TS-06_Authentication/TS-TS-001#ts-02-ts-001-failed-user-registration-with-incorrect-e-mail)] Test log 12-06-2025 09:30:56
 ---
-**Step 1**: ✅ Passed. ,,Invalid email format'' message appears on registration form. Registration takes no effect.<br>
+✅ Passed. ,,Invalid email format'' message appears on registration form. Registration takes no effect.<br>
 
 ---
 
